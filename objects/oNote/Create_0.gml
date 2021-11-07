@@ -1,0 +1,14 @@
+prevNote = undefined;
+isSusNote = false;
+noteData = 0;
+strumTime = 4000;
+mustPress = true;
+canBeHit = false;
+wasGoodHit = false;
+tooLate = false;
+
+s_width = 158*0.7;
+alpha = 1;
+sprite = arrow_static;
+
+event_user(0);
