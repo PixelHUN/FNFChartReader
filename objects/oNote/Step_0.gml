@@ -36,3 +36,44 @@ if(wasGoodHit)
 {
 	instance_destroy();
 }
+
+daSong = oNoteHandler.daSong;
+if(mustPress)
+	y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - 0.45 * (oConductor.songPosition - strumTime) * daSong.speed);
+else
+	y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - 0.45 * (oConductor.songPosition - strumTime) * daSong.speed);
+
+if(isSusNote)
+	y -= s_width / 2;
+		
+if(mustPress && !isSusNote)
+{
+	switch(noteData)
+	{
+		case 0:
+			if(oInputHandler.key_left && canBeHit)
+			{
+				wasGoodHit = true;
+			}
+			break;
+		case 1:
+			if(oInputHandler.key_down && canBeHit)
+			{
+				wasGoodHit = true;
+			}
+			break;
+		case 2:
+			if(oInputHandler.key_up && canBeHit)
+			{
+				wasGoodHit = true;
+			}
+			break;
+		case 3:
+			if(oInputHandler.key_right && canBeHit)
+			{
+				wasGoodHit = true;
+				instance_destroy();
+			}
+			break;
+	}
+}

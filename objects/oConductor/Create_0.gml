@@ -9,4 +9,5 @@ safeFrames = 10;
 safeZoneOffset = floor((safeFrames / 60) * 1000);
 timeScale = safeZoneOffset / 166;
 
-instance_create_layer(0,0,"Instances",oChartReader)
+instance_create_layer(0,0,"Instances",oChartReader);
+instance_create_layer(0,0,"Instances",oInputHandler);

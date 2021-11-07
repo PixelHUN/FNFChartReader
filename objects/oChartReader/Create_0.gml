@@ -1,4 +1,7 @@
-var _file = file_text_open_read(working_directory+"milf-hard.json");
+songname = "bopeebo";
+difficulty = "";
+
+var _file = file_text_open_read("assets/charts/"+songname+"/"+songname+difficulty+".json");
 var _string = file_text_read_string(_file);
 file_text_close(_file);
 
@@ -7,14 +10,28 @@ var _songJSON = json_parse(_string)
 daSong = _songJSON.song;
 daNotes = daSong.notes;
 
-oConductor.bpm = _songJSON.bpm;
+if(variable_struct_exists(_songJSON, "bpm"))
+{
+	oConductor.bpm = _songJSON.bpm;
+	kadechart = false;
+}
+else
+{
+	oConductor.bpm = daSong.bpm;
+	kadechart = true;
+}
 with(oConductor) event_user(0);
 
-inst = daSong.song+"_Inst";
-voice = daSong.song+"_Voices";
+show_debug_message(daSong.song);
 
-musinst = audio_play_sound(asset_get_index(inst),999,false);
-musvoice = audio_play_sound(asset_get_index(voice),999,false);
+inst = "assets/music/"+daSong.song+"_Inst.ogg";
+voice = "assets/music/"+daSong.song+"_Voices.ogg";
+
+inststream = audio_create_stream(inst);
+voicestream = audio_create_stream(voice);
+
+musinst = audio_play_sound(inststream,999,false);
+musvoice = audio_play_sound(voicestream,999,false);
 
 notehandler = instance_create_layer(0,0,"Instances",oNoteHandler);
 notehandler.daSong = daSong;
