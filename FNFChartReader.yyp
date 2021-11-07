@@ -8,6 +8,7 @@
     {"id":{"name":"oChartReader","path":"objects/oChartReader/oChartReader.yy",},"order":2,},
     {"id":{"name":"sNote","path":"sprites/sNote/sNote.yy",},"order":0,},
     {"id":{"name":"blue_hold_end","path":"sprites/blue_hold_end/blue_hold_end.yy",},"order":2,},
+    {"id":{"name":"alphabet","path":"sprites/alphabet/alphabet.yy",},"order":15,},
     {"id":{"name":"pruple_end_hold","path":"sprites/pruple_end_hold/pruple_end_hold.yy",},"order":7,},
     {"id":{"name":"green_hold_end","path":"sprites/green_hold_end/green_hold_end.yy",},"order":5,},
     {"id":{"name":"arrow_static","path":"sprites/arrow_static/arrow_static.yy",},"order":0,},
