@@ -27,7 +27,7 @@ draw_sprite_stretched_ext(menuDesat,0,0,0,display_get_gui_width(),display_get_gu
 
 for(var i = 0; i < array_length(freeplaysonglist); i++)
 {
-	draw_set_font(fnt_fnf);
+	draw_set_font(font);
 	if(selection == i) draw_set_alpha(1);
 	else draw_set_alpha(0.4);
 	
@@ -38,8 +38,8 @@ for(var i = 0; i < array_length(freeplaysonglist); i++)
 	var _yy = display_get_gui_height()/2-34+172*(i-selectiondisplay);
 	//_disx = lerp(_disx,_xx,0.1);
 	//_disy = lerp(_disy,_yy,0.1);
-	draw_set_color(c_black);
-	draw_text(_xx,_yy,string_upper(freeplaysonglist[i]));
+	//draw_set_color(c_black);
+	draw_text(_xx,_yy,string_lower(freeplaysonglist[i]));
 	draw_set_color(-1);
 	draw_set_font(-1);
 }

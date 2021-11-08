@@ -36,6 +36,12 @@ if(tooLate)
 
 if(wasGoodHit)
 {
+	if(mustPress) && (!isSusNote)
+	{
+		var _popupScore = instance_create_layer(oChartReader._gf.x,oChartReader._gf.y,"Instances",oPopUp);
+		_popupScore.daNote = self;
+	}
+	
 	var _anim = "idle";
 
 	switch(noteData)
@@ -58,17 +64,17 @@ if(wasGoodHit)
 	}
 	if(mustPress)
 	{
-		oConductor._bf.danced = false;
-		oConductor._bf.animtimer = 0;
-		oConductor._bf.animframe = 0;
-		oConductor._bf.animstate = _anim;
+		oChartReader._bf.danced = false;
+		oChartReader._bf.animtimer = 0;
+		oChartReader._bf.animframe = 0;
+		oChartReader._bf.animstate = _anim;
 	}
 	else
 	{
-		oConductor._dad.danced = false;
-		oConductor._dad.animtimer = 0;
-		oConductor._dad.animframe = 0;
-		oConductor._dad.animstate = _anim;
+		oChartReader._dad.danced = false;
+		oChartReader._dad.animtimer = 0;
+		oChartReader._dad.animframe = 0;
+		oChartReader._dad.animstate = _anim;
 	}
 	instance_destroy();
 }

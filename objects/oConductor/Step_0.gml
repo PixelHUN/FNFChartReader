@@ -44,17 +44,17 @@ if(audio_is_playing(musinst))
 		}
 	}
 	
-	if(_bf.animstate != "idle" && _bf.danced && _bf.animtimer > stepCrochet * 4 && _bf.animframe > 5)
+	if(oChartReader._bf.animstate != "idle" && oChartReader._bf.danced && oChartReader._bf.animtimer > stepCrochet * 4 && oChartReader._bf.animframe > 5)
 	{
-		_bf.animtimer = 0;
-		_bf.animframe = 0;
-		_bf.animstate = "idle";
+		oChartReader._bf.animtimer = 0;
+		oChartReader._bf.animframe = 0;
+		oChartReader._bf.animstate = "idle";
 	}
-	if(_dad.animstate != "idle" && _dad.danced && _dad.animtimer > stepCrochet * 4 && _dad.animframe > 5)
+	if(oChartReader._dad.animstate != "idle" && oChartReader._dad.danced && oChartReader._dad.animtimer > stepCrochet * 4 && oChartReader._dad.animframe > 5)
 	{
-		_dad.animtimer = 0;
-		_dad.animframe = 0;
-		_dad.animstate = "idle";
+		oChartReader._dad.animtimer = 0;
+		oChartReader._dad.animframe = 0;
+		oChartReader._dad.animstate = "idle";
 	}
 }
 else if(songPosition < 0)

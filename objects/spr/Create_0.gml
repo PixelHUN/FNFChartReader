@@ -15,6 +15,14 @@ downholdend = sprite_add("assets/sprite/notes/blue hold end.png",0,false,true,0,
 upholdend = sprite_add("assets/sprite/notes/green hold end.png",0,false,true,0,0);
 rightholdend = sprite_add("assets/sprite/notes/red hold end.png",0,false,true,0,0);
 
+//Pop Up Scores
+sick = sprite_add("assets/sprite/ui/sick.png",1,false,true,0,0);
+good = sprite_add("assets/sprite/ui/good.png",1,false,true,0,0);
+bad = sprite_add("assets/sprite/ui/bad.png",1,false,true,0,0);
+shit = sprite_add("assets/sprite/ui/shit.png",1,false,true,0,0);
+
 //Characters
 bf = sprite_add("assets/sprite/characters/bf_strip.png",15,false,true,250,250);
+gf = sprite_add("assets/sprite/characters/gf_strip.png",30,false,true,250,250);
+dad = sprite_add("assets/sprite/characters/dad_strip.png",15,false,true,250,250);
 mom = sprite_add("assets/sprite/characters/mom_strip.png",15,false,true,250,250);
