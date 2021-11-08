@@ -1,6 +1,45 @@
+stepHit = false;
+beatHit = false;
+
 if(audio_is_playing(musinst))
 {
 	songPosition = audio_sound_get_track_position(musinst)*1000;
+	
+	curDecimalBeat = (songPosition / 1000) * bpm / 60;
+	nextStep = floor(songPosition / stepCrochet);
+	if (nextStep >= 0)
+	{
+		if (nextStep > curStep)
+		{
+			for(var i = curStep; i <= nextStep; i++)
+			{
+				curStep++;
+				stepHit = true;
+			}
+		}
+		if (nextStep < curStep)
+		{
+			curStep = nextStep;
+			stepHit = true;
+		}
+	}
+	
+	if(stepHit)
+	{
+		lastBeat = curBeat;
+		curBeat = floor(curStep / 4);
+		if(curStep mod 4 == 0)
+			beatHit = true;
+	}
+	
+	if(oChartReader.daNotes[(curBeat/4)].mustHitSection)
+	{
+		camera_point_to(0);
+	}
+	else
+	{
+		camera_point_to(1);
+	}
 }
 else if(songPosition < 0)
 {

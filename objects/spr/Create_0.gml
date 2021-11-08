@@ -14,3 +14,7 @@ leftholdend = sprite_add("assets/sprite/notes/purple hold end.png",0,false,true,
 downholdend = sprite_add("assets/sprite/notes/blue hold end.png",0,false,true,0,0);
 upholdend = sprite_add("assets/sprite/notes/green hold end.png",0,false,true,0,0);
 rightholdend = sprite_add("assets/sprite/notes/red hold end.png",0,false,true,0,0);
+
+//Characters
+bf = sprite_add("assets/sprite/characters/bf_strip.png",15,false,true,250,250);
+mom = sprite_add("assets/sprite/characters/mom_strip.png",15,false,true,250,250);

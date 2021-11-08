@@ -72,8 +72,10 @@ if(isSusNote && prevNote != undefined)
 		
 		var stepHeight = (0.45 * oConductor.stepCrochet) * oChartReader.daSong.speed;
 		
-		if(prevNote.isSusNote)
+		if(prevNote.prevNote.isSusNote)
 			prevNote.s_height *= stepHeight / prevNote.s_height;
+		else
+			prevNote.yOffset -= stepHeight-prevNote.s_height;
 	}
 	
 }

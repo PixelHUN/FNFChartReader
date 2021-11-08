@@ -2,7 +2,7 @@ if(mustPress)
 {
 	if(isSusNote)
 	{
-		if(strumTime > oConductor.songPosition - (oConductor.safeZoneOffset * 1.5) && strumTime < oConductor.songPosition + (oConductor.safeZoneOffset * 0.5))
+		if(strumTime > oConductor.songPosition - (oConductor.safeZoneOffset * 1.5) && strumTime < oConductor.songPosition + (oConductor.safeZoneOffset * 0.9))
 			canBeHit = true;
 		else
 			canBeHit = false;
@@ -22,7 +22,9 @@ else
 {
 	canBeHit = false;
 	
-	if(strumTime <= oConductor.songPosition)
+	if(strumTime <= oConductor.songPosition) && (!isSusNote)
+		wasGoodHit = true;
+	else if(strumTime <= oConductor.songPosition + 100)
 		wasGoodHit = true;
 }
 
@@ -38,10 +40,10 @@ if(wasGoodHit)
 }
 
 daSong = oNoteHandler.daSong;
-y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - (oConductor.songPosition - strumTime) * (0.45 * daSong.speed));
+y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7 - (oConductor.songPosition - strumTime) * (0.45 * daSong.speed));
 
 if(isSusNote)
-	y -= s_height;
+	y += -s_height + yOffset;
 		
 /*if(mustPress && !isSusNote)
 {

@@ -77,7 +77,7 @@ for(var i = 0; i < array_length(daNotes); i++)
 		
 		if(_susLength > 0)
 		{
-			for(var iii = floor(_susLength); iii >= 0; iii--)
+			for(var iii = floor(_susLength)+1; iii >= 0; iii--)
 			{
 				var _prevNote = undefined
 				if(array_length(unspawnNotes) > 0)
@@ -91,6 +91,7 @@ for(var i = 0; i < array_length(daNotes); i++)
 				susNote.prevNote = _prevNote;
 				susNote.mustPress = _gottaHit;
 				susNote.isSusNote = true;
+				susNote.susActive = true;
 			
 				if(_gottaHit)
 					susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*0.7)*4;

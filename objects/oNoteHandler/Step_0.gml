@@ -1,6 +1,6 @@
 //Bullshit cuz of with();
-
 var _data = -1;
+var _dataHold = -1;
 
 sortbyshit = function(_a, _b)
 {
@@ -44,16 +44,16 @@ for(var i = 0; i < array_length(_closestNotes); i++)
 		switch(_closestNotes[i].noteData)
 		{
 			case 0:
-				if(oInputHandler.left_hold) _data = 0;
+				if(oInputHandler.left_hold) _dataHold = 0;
 				break;
 			case 1:
-				if(oInputHandler.down_hold) _data = 1;
+				if(oInputHandler.down_hold) _dataHold = 1;
 				break;
 			case 2:
-				if(oInputHandler.up_hold) _data = 2;
+				if(oInputHandler.up_hold) _dataHold = 2;
 				break;
 			case 3:
-				if(oInputHandler.right_hold) _data = 3;
+				if(oInputHandler.right_hold) _dataHold = 3;
 				break;
 		}
 	}
@@ -63,7 +63,7 @@ for(var i = 0; i < array_length(_closestNotes); i++)
 	}
 	with(oNote)
 	{
-		if(self.isSusNote && self.canBeHit && self.mustPress && self.susActive && _data == self.noteData)
+		if(self.isSusNote && self.canBeHit && self.mustPress && self.susActive && _dataHold == self.noteData)
 		{
 			self.wasGoodHit = true;
 		}
