@@ -70,9 +70,12 @@ for(var i = 0; i < array_length(_closestNotes); i++)
 	}
 }
 
+var _mustPress = false;
+
 if (array_length(_dataNotes) != 0)
 {
 	var coolNote = _dataNotes[0];
 	
+	_mustPress = coolNote.mustPress;
 	coolNote.wasGoodHit = true;
 }

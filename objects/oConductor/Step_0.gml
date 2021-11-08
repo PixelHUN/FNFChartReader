@@ -32,13 +32,29 @@ if(audio_is_playing(musinst))
 			beatHit = true;
 	}
 	
-	if(oChartReader.daNotes[(curBeat/4)].mustHitSection)
+	if(curBeat mod 4 == 0)
 	{
-		camera_point_to(0);
+		if(oChartReader.daNotes[(curBeat/4)].mustHitSection)
+		{
+			camera_point_to(0);
+		}
+		else
+		{
+			camera_point_to(1);
+		}
 	}
-	else
+	
+	if(_bf.animstate != "idle" && _bf.danced && _bf.animtimer > stepCrochet * 4 && _bf.animframe > 5)
 	{
-		camera_point_to(1);
+		_bf.animtimer = 0;
+		_bf.animframe = 0;
+		_bf.animstate = "idle";
+	}
+	if(_dad.animstate != "idle" && _dad.danced && _dad.animtimer > stepCrochet * 4 && _dad.animframe > 5)
+	{
+		_dad.animtimer = 0;
+		_dad.animframe = 0;
+		_dad.animstate = "idle";
 	}
 }
 else if(songPosition < 0)

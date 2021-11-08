@@ -15,3 +15,6 @@ switch(character)
 		offsetdown = [0, 80];
 		break;
 }
+
+_x = x;
+_y = y;

@@ -36,6 +36,40 @@ if(tooLate)
 
 if(wasGoodHit)
 {
+	var _anim = "idle";
+
+	switch(noteData)
+	{
+		case 0:
+			_anim = "singLeft";
+			break;
+			
+		case 1:
+			_anim = "singDown";
+			break;
+			
+		case 2:
+			_anim = "singUp";
+			break;
+			
+		case 3:
+			_anim = "singRight";
+			break;
+	}
+	if(mustPress)
+	{
+		oConductor._bf.danced = false;
+		oConductor._bf.animtimer = 0;
+		oConductor._bf.animframe = 0;
+		oConductor._bf.animstate = _anim;
+	}
+	else
+	{
+		oConductor._dad.danced = false;
+		oConductor._dad.animtimer = 0;
+		oConductor._dad.animframe = 0;
+		oConductor._dad.animstate = _anim;
+	}
 	instance_destroy();
 }
 

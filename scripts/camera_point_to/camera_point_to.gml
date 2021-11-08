@@ -19,13 +19,13 @@ function camera_point_to(_character, _zoomout = oCamera.targetzoomout){
 	
 	if(_character == 0)
 	{
-		oCamera.targetx = oConductor._bf.x-_disw;
-		oCamera.targety = oConductor._bf.y-_dish;
+		oCamera.targetx = oConductor._bf._x-_disw;
+		oCamera.targety = oConductor._bf._y-_dish;
 	}
 	else
 	{
-		oCamera.targetx = oConductor._dad.x-_disw;
-		oCamera.targety = oConductor._dad.y-_dish;
+		oCamera.targetx = oConductor._dad._x-_disw;
+		oCamera.targety = oConductor._dad._y-_dish;
 	}
 	oCamera.targetzoomout = _zoomout;
 }
