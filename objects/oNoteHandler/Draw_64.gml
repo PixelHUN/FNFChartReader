@@ -1,5 +1,5 @@
-var _disx = display_get_gui_width()-(sprite_get_width(arrow_static)*size)*4;
-_disy = sprite_get_height(arrow_static)*size/2+32;
+var _disx = display_get_gui_width()-(sprite_get_width(spr.arrow)*size)*4;
+_disy = sprite_get_height(spr.arrow)*size/2+32;
 
 for(var i = 0; i < 4; i++)
 {
@@ -19,7 +19,7 @@ for(var i = 0; i < 4; i++)
 			_rot = -90;
 			break;
 	}
-	draw_sprite_ext(arrow_static,0,_disx-16+(sprite_get_width(arrow_static)*size)*i+sprite_get_width(arrow_static)*size/2,_disy,size,size,_rot,c_white,1);
+	draw_sprite_ext(spr.arrow,0,_disx-16+(sprite_get_width(spr.arrow)*size)*i+sprite_get_width(spr.arrow)*size/2,_disy,size,size,_rot,c_white,1);
 }
 
 for(var i = 0; i < 4; i++)
@@ -40,5 +40,5 @@ for(var i = 0; i < 4; i++)
 			_rot = -90;
 			break;
 	}
-	draw_sprite_ext(arrow_static,0,16+(sprite_get_width(arrow_static)*size)*i+sprite_get_width(arrow_static)*size/2,_disy,size,size,_rot,c_white,1);
+	draw_sprite_ext(spr.arrow,0,16+(sprite_get_width(spr.arrow)*size)*i+sprite_get_width(spr.arrow)*size/2,_disy,size,size,_rot,c_white,1);
 }

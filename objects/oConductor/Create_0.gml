@@ -4,6 +4,10 @@ stepCrochet = crochet / 4; //steps ms
 songPosition = 0;
 lastSongPos = 0;
 offset = 0;
+introCounter = 0;
+
+musinst = 0;
+musvoice = 0;
 
 safeFrames = 10;
 safeZoneOffset = floor((safeFrames / 60) * 1000);

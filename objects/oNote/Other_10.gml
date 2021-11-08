@@ -1,5 +1,5 @@
-//if (prevNote == undefined)
-//	prevNote = object_index;
+if (prevNote == undefined)
+	prevNote = self;
 	
 //x += 50;
 //y -= 2000;
@@ -11,19 +11,19 @@ switch(noteData)
 {
 	case 0:
 		x += s_width * 0;
-		sprite = purple;
+		sprite = spr.leftarrow;
 		break;
 	case 1:
 		x += s_width * 1;
-		sprite = blue;
+		sprite = spr.downarrow;
 		break;
 	case 2:
 		x += s_width * 2;
-		sprite = green;
+		sprite = spr.uparrow;
 		break;
 	case 3:
 		x += s_width * 3;
-		sprite = red;
+		sprite = spr.rightarrow;
 		break;
 }
 
@@ -31,22 +31,23 @@ if(isSusNote && prevNote != undefined)
 {
 	alpha = 0.6;
 	
-	x += s_width / 2;
-	s_width = 50;
+	s_width = 50*0.7;
+	s_height = 50*0.7;
+	x += s_width;
 	
 	switch(noteData)
 	{
 		case 0:
-			sprite = pruple_end_hold;
+			sprite = spr.leftholdend;
 			break;
 		case 1:
-			sprite = blue_hold_end;
+			sprite = spr.downholdend;
 			break;
 		case 2:
-			sprite = green_hold_end;
+			sprite = spr.upholdend;
 			break;
 		case 3:
-			sprite = red_hold_end;
+			sprite = spr.rightholdend;
 			break;
 	}
 	
@@ -55,18 +56,24 @@ if(isSusNote && prevNote != undefined)
 		switch(noteData)
 		{
 			case 0:
-				sprite = purple_hold_piece;
+				sprite = spr.lefthold;
 				break;
 			case 1:
-				sprite = blue_hold_piece;
+				sprite = spr.downhold;
 				break;
 			case 2:
-				sprite = green_hold_piece;
+				sprite = spr.uphold;
 				break;
 			case 3:
-				sprite = red_hold_piece;
+				sprite = spr.righthold;
 				break;
 		}
+		show_debug_message(string(prevNote.strumTime)+" - "+string(strumTime));
+		
+		var stepHeight = (0.45 * oConductor.stepCrochet) * oChartReader.daSong.speed;
+		
+		if(prevNote.isSusNote)
+			prevNote.s_height *= stepHeight / prevNote.s_height;
 	}
 	
 }

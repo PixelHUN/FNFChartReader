@@ -5,4 +5,4 @@ if(canBeHit)
 else
 	_col = c_white;
 
-draw_sprite_stretched_ext(sprite,0,x,y,s_width,s_width,_col,alpha);
+draw_sprite_stretched_ext(sprite,0,x,y,s_width,s_height,_col,alpha);

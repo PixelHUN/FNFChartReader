@@ -6,8 +6,10 @@ mustPress = true;
 canBeHit = false;
 wasGoodHit = false;
 tooLate = false;
+susActive = true;
 
 s_width = 158*0.7;
+s_height = 158*0.7;
 alpha = 1;
 sprite = arrow_static;
 

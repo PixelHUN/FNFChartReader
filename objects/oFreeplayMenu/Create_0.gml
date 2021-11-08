@@ -1,10 +1,22 @@
 selection = 0;
+lastselection = 0;
 selectiondisplay = 0;
+
+volume = 1;
+
+difficulty = 1;
+dif = "";
+//_hue = 0;
+
+songListen = false;
 
 freeplaysonglist = array_create(0);
 
 _breakfast = audio_create_stream("assets/music/breakfast.ogg");
 _menusong = audio_play_sound(_breakfast,0,true);
+
+soundtest = 0;
+
 audio_sound_gain(_menusong,0,0)
 audio_sound_gain(_menusong,1,3000);
 

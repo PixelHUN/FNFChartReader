@@ -1,0 +1,2 @@
+songname = "bopeebo";
+difficulty = "";
