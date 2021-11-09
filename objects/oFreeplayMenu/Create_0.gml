@@ -30,8 +30,8 @@ var _i = 0;
 while _f != ""
 {
 	array_push(freeplaysonglist, _f);
-    _i++;
-    _f = file_find_next();
+	_i++;
+	_f = file_find_next();
 	switch(_f)
 	{
 		case "satin-panties":
@@ -40,6 +40,3 @@ while _f != ""
 	}
 	show_debug_message(_f);
 }
-
-var _trans = instance_create_layer(0,0,"Instances",oTransition);
-_trans.transIn = true;

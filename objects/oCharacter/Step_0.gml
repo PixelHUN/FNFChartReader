@@ -83,13 +83,27 @@ if(character != "gf")
 }
 else
 {
-	if(oConductor.beatHit)
+	if(instance_exists(oConductor))
 	{
-		danceLeft = !danceLeft
-		if(danceLeft)
-			animkey = 0;
-		else
-			animkey = 15;
+		if(oConductor.beatHit)
+		{
+			danceLeft = !danceLeft
+			if(danceLeft)
+				animkey = 0;
+			else
+				animkey = 15;
+		}
+	}
+	else
+	{
+		if(oIntro.beatHit)
+		{
+			danceLeft = !danceLeft
+			if(danceLeft)
+				animkey = 0;
+			else
+				animkey = 15;
+		}
 	}
 	if(danceLeft && animkey >= 14)
 		animkey = 14;

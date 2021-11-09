@@ -32,8 +32,10 @@ if(audio_is_playing(musinst))
 			beatHit = true;
 	}
 	
-	if(curBeat mod 4 == 0)
+	if(beatHit)
 	{
+		if(array_length(oChartReader.daNotes)-1 > curSection) && (curBeat mod 4 == 0)
+			curSection++;
 		if(oChartReader.daNotes[curSection].mustHitSection)
 		{
 			camera_point_to(0);
@@ -42,13 +44,11 @@ if(audio_is_playing(musinst))
 		{
 			camera_point_to(1);
 		}
-		if(variable_struct_exists(oChartReader.daNotes[curSection], "altAnim")) && (oChartReader.daNotes[(curBeat/4)].altAnim)
-			oChartReader._dad.character = "mom";
-		else
-			oChartReader._dad.character = "dad";
-		with(oChartReader._dad) event_user(0);
-		if(array_length(oChartReader.daNotes)-1 > curSection)
-			curSection++;
+		//if(variable_struct_exists(oChartReader.daNotes[curSection], "altAnim")) && (oChartReader.daNotes[(curBeat/4)].altAnim)
+			//oChartReader._dad.character = "mom";
+		//else
+			//oChartReader._dad.character = "dad";
+		//with(oChartReader._dad) event_user(0);
 	}
 	
 	if(oChartReader._bf.animstate != "idle" && oChartReader._bf.danced && oChartReader._bf.animtimer > stepCrochet * 4 && oChartReader._bf.animframe > 5)
@@ -110,9 +110,9 @@ else if(songPosition >= 0 && songPosition <= crochet)
 	if(variable_struct_exists(oChartReader.daSong, "needsVoices")) && (oChartReader.daSong.needsVoices)
 		musvoice = audio_play_sound(voicestream,999,false);
 }
-if(audio_sound_get_track_position(musinst) >= audio_sound_length(musinst)-0.05)
+if(audio_sound_get_track_position(musinst) >= audio_sound_length(musinst)-0.05) && (!instance_exists(oTransition))
 {
 	var _trans = instance_create_layer(0,0,"Instances",oTransition);
 	_trans.transIn = false;
-	_trans.roomTo = Menu;
+	_trans.roomTo = Freeplay;
 }

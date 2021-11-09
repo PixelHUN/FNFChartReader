@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"Freeplay","path":"rooms/Freeplay/Freeplay.yy",},"order":2,},
     {"id":{"name":"purple","path":"sprites/purple/purple.yy",},"order":8,},
     {"id":{"name":"green","path":"sprites/green/green.yy",},"order":4,},
     {"id":{"name":"menuDesat","path":"sprites/menuDesat/menuDesat.yy",},"order":16,},
@@ -8,10 +9,12 @@
     {"id":{"name":"red_hold_end","path":"sprites/red_hold_end/red_hold_end.yy",},"order":11,},
     {"id":{"name":"oPlay","path":"objects/oPlay/oPlay.yy",},"order":6,},
     {"id":{"name":"oStage","path":"objects/oStage/oStage.yy",},"order":10,},
+    {"id":{"name":"oTitle","path":"objects/oTitle/oTitle.yy",},"order":14,},
     {"id":{"name":"dadasd","path":"sprites/dadasd/dadasd.yy",},"order":17,},
     {"id":{"name":"oFreeplayMenu","path":"objects/oFreeplayMenu/oFreeplayMenu.yy",},"order":5,},
     {"id":{"name":"oChartReader","path":"objects/oChartReader/oChartReader.yy",},"order":2,},
     {"id":{"name":"sNote","path":"sprites/sNote/sNote.yy",},"order":0,},
+    {"id":{"name":"split","path":"scripts/split/split.yy",},"order":2,},
     {"id":{"name":"oPopUp","path":"objects/oPopUp/oPopUp.yy",},"order":11,},
     {"id":{"name":"spr","path":"objects/spr/spr.yy",},"order":7,},
     {"id":{"name":"blue_hold_end","path":"sprites/blue_hold_end/blue_hold_end.yy",},"order":2,},
@@ -26,10 +29,11 @@
     {"id":{"name":"fnt_vcr","path":"fonts/fnt_vcr/fnt_vcr.yy",},"order":1,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":9,},
     {"id":{"name":"camera_point_to","path":"scripts/camera_point_to/camera_point_to.yy",},"order":1,},
+    {"id":{"name":"oIntro","path":"objects/oIntro/oIntro.yy",},"order":13,},
     {"id":{"name":"purple_hold_piece","path":"sprites/purple_hold_piece/purple_hold_piece.yy",},"order":9,},
     {"id":{"name":"fnt_fnf","path":"fonts/fnt_fnf/fnt_fnf.yy",},"order":0,},
     {"id":{"name":"Milf_Voices","path":"sounds/Milf_Voices/Milf_Voices.yy",},"order":1,},
-    {"id":{"name":"Menu","path":"rooms/Menu/Menu.yy",},"order":1,},
+    {"id":{"name":"Title","path":"rooms/Title/Title.yy",},"order":1,},
     {"id":{"name":"oInputHandler","path":"objects/oInputHandler/oInputHandler.yy",},"order":4,},
     {"id":{"name":"red_hold_piece","path":"sprites/red_hold_piece/red_hold_piece.yy",},"order":12,},
     {"id":{"name":"seperate_number","path":"scripts/seperate_number/seperate_number.yy",},"order":0,},
@@ -52,8 +56,9 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
+    {"roomId":{"name":"Title","path":"rooms/Title/Title.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Freeplay","path":"rooms/Freeplay/Freeplay.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -192,6 +197,8 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/tutorial","resourceVersion":"1.0","name":"tutorial-hard.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/tutorial","resourceVersion":"1.0","name":"tutorial.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Tutorial_Inst.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets","resourceVersion":"1.0","name":"introText.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"freakyMenu.ogg","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",

@@ -3,6 +3,9 @@ character = "bf";
 _x = x;
 _y = y;
 
+xscale = 1;
+yscale = 1;
+
 offsetleft = [0,0];
 offsetright = [0,0];
 offsetup = [0,0];
