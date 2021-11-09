@@ -1,81 +1,105 @@
 //Bullshit cuz of with();
-var _data = -1;
-var _dataHold = -1;
 
 sortbyshit = function(_a, _b)
 {
 	return _a.strumTime - _b.strumTime;
 }
 
-var _closestNotes = array_create(0);
+key_up = oInputHandler.key_up;
+key_down = oInputHandler.key_down;
+key_right = oInputHandler.key_right;
+key_left = oInputHandler.key_left;
 
-with(oNote)
+up_hold = oInputHandler.up_hold;
+down_hold = oInputHandler.down_hold;
+right_hold = oInputHandler.right_hold;
+left_hold = oInputHandler.left_hold;
+
+controlArray = [key_left, key_down, key_up, key_right];
+
+if(key_up || key_right || key_down || key_left)
 {
-	if(self.canBeHit && self.mustPress && !self.wasGoodHit)
-		array_push(_closestNotes, self);
-}
-
-array_sort(_closestNotes, sortbyshit);
-
-var _dataNotes = array_create(0);
-
-for(var i = 0; i < array_length(_closestNotes); i++)
-{
-	if(!_closestNotes[i].isSusNote)
-	{
-		switch(_closestNotes[i].noteData)
-		{
-			case 0:
-				if(oInputHandler.key_left) _data = 0;
-				break;
-			case 1:
-				if(oInputHandler.key_down) _data = 1;
-				break;
-			case 2:
-				if(oInputHandler.key_up) _data = 2;
-				break;
-			case 3:
-				if(oInputHandler.key_right) _data = 3;
-				break;
-		}
-	}
-	else
-	{
-		switch(_closestNotes[i].noteData)
-		{
-			case 0:
-				if(oInputHandler.left_hold) _dataHold = 0;
-				break;
-			case 1:
-				if(oInputHandler.down_hold) _dataHold = 1;
-				break;
-			case 2:
-				if(oInputHandler.up_hold) _dataHold = 2;
-				break;
-			case 3:
-				if(oInputHandler.right_hold) _dataHold = 3;
-				break;
-		}
-	}
-	if(_closestNotes[i].noteData == _data && !_closestNotes[i].isSusNote)
-	{
-		array_push(_dataNotes,_closestNotes[i])
-	}
+	var possibleNotes = [];
+	var ignoreList = [];
+	
 	with(oNote)
 	{
-		if(self.isSusNote && self.canBeHit && self.mustPress && self.susActive && _dataHold == self.noteData)
+		if(self.canBeHit && self.mustPress && !self.tooLate && !self.wasGoodHit)
 		{
-			self.wasGoodHit = true;
+			array_push(possibleNotes, self);
+			array_push(ignoreList, self.noteData);
+			
+			array_sort(possibleNotes, other.sortbyshit);
+		}
+	}
+	
+	if(array_length(possibleNotes) > 0)
+	{
+		var daNote = possibleNotes[0];
+		
+		if(array_length(possibleNotes) >= 2)
+		{
+			if(possibleNotes[0].strumTime == possibleNotes[1].strumTime)
+			{
+				for(var i = 0; i < array_length(possibleNotes); i++)
+				{
+					if(other.controlArray[possibleNotes[i].noteData])
+						possibleNotes[i].wasGoodHit = true;
+				}
+			}
+			else if (possibleNotes[0].noteData == possibleNotes[1].noteData)
+			{
+				if(other.controlArray[daNote.noteData])
+				{
+					daNote.wasGoodHit = true;
+				}
+			}
+			else
+			{
+				for(var i = 0; i < array_length(possibleNotes); i++)
+				{
+					if(other.controlArray[possibleNotes[i].noteData])
+					{
+						possibleNotes[i].wasGoodHit = true;
+					}
+				}
+			}
+		}
+		else
+		{
+			if(other.controlArray[daNote.noteData])
+			{
+				daNote.wasGoodHit = true;
+			}
 		}
 	}
 }
 
-var _mustPress = false;
-
-if (array_length(_dataNotes) != 0)
+if(up_hold || right_hold || down_hold || left_hold)
 {
-	var coolNote = _dataNotes[0];
-	
-	_mustPress = coolNote.mustPress;
-	coolNote.wasGoodHit = true;
+	with(oNote)
+	{
+		if(self.canBeHit && self.mustPress && self.isSusNote)
+		{
+			switch(self.noteData)
+			{
+				case 0:
+					if(other.left_hold)
+						self.wasGoodHit = true;
+					break;
+				case 1:
+					if(other.down_hold)
+						self.wasGoodHit = true;
+					break;
+				case 2:
+					if(other.up_hold)
+						self.wasGoodHit = true;
+					break;
+				case 3:
+					if(other.right_hold)
+						self.wasGoodHit = true;
+					break;
+			}
+		}
+	}
 }

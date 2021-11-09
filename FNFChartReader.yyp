@@ -181,6 +181,9 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dadbattle","resourceVersion":"1.0","name":"dadbattle-hard.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dadbattle","resourceVersion":"1.0","name":"dadbattle.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dadbattle","resourceVersion":"1.0","name":"_meta.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/test","resourceVersion":"1.0","name":"test.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Test_Inst.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Test_Voices.ogg","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",
