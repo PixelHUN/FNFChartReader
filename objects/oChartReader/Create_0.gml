@@ -119,12 +119,18 @@ with(_stage) event_user(0);
 _gf = instance_create_layer(480,150,"Instances",oCharacter);
 _gf.character = "gf";
 _gf.depth += 2;
+_gf._x = _gf.x;
+_gf._y = _gf.y;
 with(_gf) event_user(0);
 	
 _bf = instance_create_layer(830,450,"Instances",oCharacter);
+_bf._x = _bf.x;
+_bf._y = _bf.y;
 with(_bf) event_user(0);
 
 _dad = instance_create_layer(140,100,"Instances",oCharacter);
+_dad._x = _dad.x;
+_dad._y = _dad.y;
 _dad.character = daSong.player2;
 if(daSong.player2 == "mom-car")
 {

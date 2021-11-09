@@ -1,10 +1,11 @@
 bpm = 100;
-crochet = (60 / bpm) * 1000; // beats ms
+crochet = (room_speed / bpm) * 1000; // beats ms
 stepCrochet = crochet / 4; //steps ms
 songPosition = 0;
 lastSongPos = 0;
 offset = 0;
 introCounter = 0;
+curSection = 0;
 
 songScore = 0;
 
@@ -12,7 +13,7 @@ musinst = 0;
 musvoice = 0;
 
 safeFrames = 10;
-safeZoneOffset = floor((safeFrames / 60) * 1000);
+safeZoneOffset = floor((safeFrames / room_speed) * 1000);
 timeScale = safeZoneOffset / 166;
 
 curDecimalBeat = 0;

@@ -17,6 +17,7 @@
     {"id":{"name":"blue_hold_end","path":"sprites/blue_hold_end/blue_hold_end.yy",},"order":2,},
     {"id":{"name":"pruple_end_hold","path":"sprites/pruple_end_hold/pruple_end_hold.yy",},"order":7,},
     {"id":{"name":"green_hold_end","path":"sprites/green_hold_end/green_hold_end.yy",},"order":5,},
+    {"id":{"name":"sTransition","path":"sprites/sTransition/sTransition.yy",},"order":18,},
     {"id":{"name":"arrow_static","path":"sprites/arrow_static/arrow_static.yy",},"order":0,},
     {"id":{"name":"green_hold_piece","path":"sprites/green_hold_piece/green_hold_piece.yy",},"order":6,},
     {"id":{"name":"oNote","path":"objects/oNote/oNote.yy",},"order":0,},
@@ -35,6 +36,7 @@
     {"id":{"name":"red","path":"sprites/red/red.yy",},"order":10,},
     {"id":{"name":"oConductor","path":"objects/oConductor/oConductor.yy",},"order":1,},
     {"id":{"name":"oNoteHandler","path":"objects/oNoteHandler/oNoteHandler.yy",},"order":3,},
+    {"id":{"name":"oTransition","path":"objects/oTransition/oTransition.yy",},"order":12,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -184,6 +186,12 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/test","resourceVersion":"1.0","name":"test.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Test_Inst.ogg","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Test_Voices.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/tutorial","resourceVersion":"1.0","name":"0.offset","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/tutorial","resourceVersion":"1.0","name":"tutorial-easy.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/tutorial","resourceVersion":"1.0","name":"modchart.lua","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/tutorial","resourceVersion":"1.0","name":"tutorial-hard.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/tutorial","resourceVersion":"1.0","name":"tutorial.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Tutorial_Inst.ogg","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",

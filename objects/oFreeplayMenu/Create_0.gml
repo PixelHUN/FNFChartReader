@@ -40,3 +40,6 @@ while _f != ""
 	}
 	show_debug_message(_f);
 }
+
+var _trans = instance_create_layer(0,0,"Instances",oTransition);
+_trans.transIn = true;

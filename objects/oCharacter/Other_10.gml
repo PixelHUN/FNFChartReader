@@ -42,6 +42,3 @@ switch(character)
 		camoffsety = -70;
 		break;
 }
-
-_x = x;
-_y = y;

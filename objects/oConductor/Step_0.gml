@@ -5,7 +5,7 @@ if(audio_is_playing(musinst))
 {
 	songPosition = audio_sound_get_track_position(musinst)*1000;
 	
-	curDecimalBeat = (songPosition / 1000) * bpm / 60;
+	curDecimalBeat = (songPosition / 1000) * bpm / room_speed;
 	nextStep = floor(songPosition / stepCrochet);
 	if (nextStep >= 0)
 	{
@@ -34,7 +34,7 @@ if(audio_is_playing(musinst))
 	
 	if(curBeat mod 4 == 0)
 	{
-		if(oChartReader.daNotes[(curBeat/4)].mustHitSection)
+		if(oChartReader.daNotes[curSection].mustHitSection)
 		{
 			camera_point_to(0);
 		}
@@ -42,6 +42,13 @@ if(audio_is_playing(musinst))
 		{
 			camera_point_to(1);
 		}
+		if(variable_struct_exists(oChartReader.daNotes[curSection], "altAnim")) && (oChartReader.daNotes[(curBeat/4)].altAnim)
+			oChartReader._dad.character = "mom";
+		else
+			oChartReader._dad.character = "dad";
+		with(oChartReader._dad) event_user(0);
+		if(array_length(oChartReader.daNotes)-1 > curSection)
+			curSection++;
 	}
 	
 	if(oChartReader._bf.animstate != "idle" && oChartReader._bf.danced && oChartReader._bf.animtimer > stepCrochet * 4 && oChartReader._bf.animframe > 5)
@@ -89,18 +96,23 @@ else if(songPosition < 0)
 		introCounter++;
 	}
 }
-else
+else if(songPosition >= 0 && songPosition <= crochet)
 {
 	inst = "assets/music/"+oChartReader.daSong.song+"_Inst.ogg";
-	voice = "assets/music/"+oChartReader.daSong.song+"_Voices.ogg";
+	if(variable_struct_exists(oChartReader.daSong, "needsVoices")) && (oChartReader.daSong.needsVoices)
+		voice = "assets/music/"+oChartReader.daSong.song+"_Voices.ogg";
 	
 	inststream = audio_create_stream(inst);
-	voicestream = audio_create_stream(voice);
+	if(variable_struct_exists(oChartReader.daSong, "needsVoices")) && (oChartReader.daSong.needsVoices)
+		voicestream = audio_create_stream(voice);
 
 	musinst = audio_play_sound(inststream,999,false);
-	musvoice = audio_play_sound(voicestream,999,false);
+	if(variable_struct_exists(oChartReader.daSong, "needsVoices")) && (oChartReader.daSong.needsVoices)
+		musvoice = audio_play_sound(voicestream,999,false);
 }
 if(audio_sound_get_track_position(musinst) >= audio_sound_length(musinst)-0.05)
 {
-	room_goto(Menu);
+	var _trans = instance_create_layer(0,0,"Instances",oTransition);
+	_trans.transIn = false;
+	_trans.roomTo = Menu;
 }
