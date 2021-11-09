@@ -35,14 +35,22 @@ if(audio_is_playing(musinst))
 	if(beatHit)
 	{
 		if(array_length(oChartReader.daNotes)-1 > curSection) && (curBeat mod 4 == 0)
+		{
 			curSection++;
+			oCamera.zoomout = 1.05;
+		}
+		//Hardcoded MILF zooming shit
+		if(oChartReader.daSong.song = "Milf" && curBeat >= 168 && curBeat <= 200)
+		{
+			oCamera.zoomout = 1.05;
+		}
 		if(oChartReader.daNotes[curSection].mustHitSection)
 		{
-			camera_point_to(0);
+			camera_point_to(0, 1.1);
 		}
 		else
 		{
-			camera_point_to(1);
+			camera_point_to(1, 1.1);
 		}
 		//if(variable_struct_exists(oChartReader.daNotes[curSection], "altAnim")) && (oChartReader.daNotes[(curBeat/4)].altAnim)
 			//oChartReader._dad.character = "mom";

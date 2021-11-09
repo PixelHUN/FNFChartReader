@@ -19,13 +19,13 @@ function camera_point_to(_character, _zoomout = oCamera.targetzoomout){
 	
 	if(_character == 0)
 	{
-		oCamera.targetx = oChartReader._bf._x-_disw-oChartReader._bf.camoffsetx;
-		oCamera.targety = oChartReader._bf._y-_dish-oChartReader._bf.camoffsety;
+		oCamera.targetx = oChartReader._bf._x-oChartReader._bf.camoffsetx;
+		oCamera.targety = oChartReader._bf._y-oChartReader._bf.camoffsety;
 	}
 	else
 	{
-		oCamera.targetx = oChartReader._dad._x-_disw+oChartReader._dad.camoffsetx;
-		oCamera.targety = oChartReader._dad._y-_dish-oChartReader._dad.camoffsety;
+		oCamera.targetx = oChartReader._dad._x+oChartReader._dad.camoffsetx;
+		oCamera.targety = oChartReader._dad._y-oChartReader._dad.camoffsety;
 	}
 	oCamera.targetzoomout = _zoomout;
 }
