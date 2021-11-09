@@ -1,3 +1,4 @@
+//this has a lot of shit and i'm not willing to comment all of this xd
 selection = 0;
 lastselection = 0;
 selectiondisplay = 0;
@@ -25,6 +26,7 @@ soundtest = 0;
 audio_sound_gain(_menusong,0,0)
 audio_sound_gain(_menusong,1,3000);
 
+//reading all the charts in the '/charts' folder and adding them to an array
 var _f = file_find_first("assets/charts/*", fa_directory);
 var _i = 0;
 while _f != ""

@@ -1,8 +1,9 @@
 animkey += framerate/room_speed;
 
-
+//is the character gf?
 if(character != "gf")
 {
+	//idle shit
 	if(oConductor.beatHit && animstate == "idle")
 	{
 		danced = false;
@@ -27,7 +28,7 @@ if(character != "gf")
 	}
 	if(animstate != "idle")
 	{
-		switch(animstate)
+		switch(animstate) //OMG A SWITCH STATEMENT AM I NOT YANDEREDEV?
 		{
 			case "singLeft":
 				x = _x+offsetleft[0];
@@ -83,6 +84,7 @@ if(character != "gf")
 }
 else
 {
+	//gf dancing - head boppin' shit
 	if(instance_exists(oConductor))
 	{
 		if(oConductor.beatHit)

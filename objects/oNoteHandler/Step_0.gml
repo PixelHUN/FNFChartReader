@@ -1,10 +1,11 @@
-//Bullshit cuz of with();
+//Bullshit stuff for note handling <- i had a stroke writing this lol
 
-sortbyshit = function(_a, _b)
+sortbyshit = function(_a, _b) //same function for sorting as in chart reader
 {
 	return _a.strumTime - _b.strumTime;
 }
 
+//get the keys from input handler
 key_up = oInputHandler.key_up;
 key_down = oInputHandler.key_down;
 key_right = oInputHandler.key_right;
@@ -15,15 +16,17 @@ down_hold = oInputHandler.down_hold;
 right_hold = oInputHandler.right_hold;
 left_hold = oInputHandler.left_hold;
 
+//an array for easier note hit detection stuff
 controlArray = [key_left, key_down, key_up, key_right];
 
 if(key_up || key_right || key_down || key_left)
 {
 	var possibleNotes = [];
-	var ignoreList = [];
+	var ignoreList = []; //i dunno what this is for, but apparently it was in the source code
 	
 	with(oNote)
 	{
+		//get a list of possible to hit notes
 		if(self.canBeHit && self.mustPress && !self.tooLate && !self.wasGoodHit)
 		{
 			array_push(possibleNotes, self);
@@ -35,11 +38,12 @@ if(key_up || key_right || key_down || key_left)
 	
 	if(array_length(possibleNotes) > 0)
 	{
+		//daNote should be the first note that's possible to hit
 		var daNote = possibleNotes[0];
 		
-		if(array_length(possibleNotes) >= 2)
+		if(array_length(possibleNotes) >= 2) //ohno there's more than one possible to hit note
 		{
-			if(possibleNotes[0].strumTime == possibleNotes[1].strumTime)
+			if(possibleNotes[0].strumTime == possibleNotes[1].strumTime) //double notes/chords
 			{
 				for(var i = 0; i < array_length(possibleNotes); i++)
 				{
@@ -47,14 +51,14 @@ if(key_up || key_right || key_down || key_left)
 						possibleNotes[i].wasGoodHit = true;
 				}
 			}
-			else if (possibleNotes[0].noteData == possibleNotes[1].noteData)
+			else if (possibleNotes[0].noteData == possibleNotes[1].noteData) //double notes but they are literrally the same
 			{
 				if(other.controlArray[daNote.noteData])
 				{
 					daNote.wasGoodHit = true;
 				}
 			}
-			else
+			else //everything else
 			{
 				for(var i = 0; i < array_length(possibleNotes); i++)
 				{
@@ -65,7 +69,7 @@ if(key_up || key_right || key_down || key_left)
 				}
 			}
 		}
-		else
+		else //just a single note
 		{
 			if(other.controlArray[daNote.noteData])
 			{
@@ -75,7 +79,7 @@ if(key_up || key_right || key_down || key_left)
 	}
 }
 
-if(up_hold || right_hold || down_hold || left_hold)
+if(up_hold || right_hold || down_hold || left_hold) //sustain note hitting
 {
 	with(oNote)
 	{

@@ -1,3 +1,4 @@
+//checking the character
 switch(character)
 {
 	case "gf":
