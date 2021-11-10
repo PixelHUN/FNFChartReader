@@ -4,13 +4,14 @@ animkey += framerate/room_speed;
 if(character != "gf")
 {
 	//idle shit
-	if(oConductor.beatHit && animstate == "idle")
+	if(oConductor.curBeat mod 2 == 0 && animstate == "idle" && !animplaying)
 	{
 		danced = false;
+		animplaying = true;
 		x = _x;
 		y = _y;
 	}
-	if(!danced && animstate == "idle")
+	if(!danced && animstate == "idle" && animkey != 0)
 	{
 		x = _x;
 		y = _y;
@@ -25,6 +26,7 @@ if(character != "gf")
 		y = _y;
 		animkey = 6;
 		animtimer = 0;
+		animplaying = false;
 	}
 	if(animstate != "idle")
 	{

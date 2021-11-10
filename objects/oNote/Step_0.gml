@@ -2,7 +2,7 @@ if(mustPress)
 {
 	if(isSusNote)
 	{
-		if(strumTime > oConductor.songPosition - (oConductor.safeZoneOffset * 1.5) && strumTime < oConductor.songPosition + (oConductor.safeZoneOffset * 0.9))
+		if(strumTime > oConductor.songPosition - (oConductor.safeZoneOffset * 1.75) && strumTime < oConductor.songPosition + (oConductor.safeZoneOffset * 0.9))
 			canBeHit = true;
 		else
 			canBeHit = false;

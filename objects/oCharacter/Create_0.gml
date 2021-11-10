@@ -19,9 +19,10 @@ framerate = 12;
 sprite = spr.bf;
 
 animkey = 0;
-danced = false;
+danced = true;
 danceLeft = true;
 
 animstate = "idle";
+animplaying = false;
 animframe = 0;
 animtimer = 0;

@@ -45,12 +45,12 @@ if(audio_is_playing(musinst))
 		if(array_length(oChartReader.daNotes)-1 > curSection) && (curBeat mod 4 == 0) //zooming on every bar
 		{
 			curSection++;
-			oCamera.zoomout = 1.05;
+			oCamera.zoomout = oCamera.targetzoomout-0.05;
 		}
 		//Hardcoded MILF zooming shit
 		if(oChartReader.daSong.song = "Milf" && curBeat >= 168 && curBeat <= 200)
 		{
-			oCamera.zoomout = 1.05;
+			oCamera.zoomout = oCamera.targetzoomout-0.05;
 		}
 		
 		if(oChartReader.daNotes[curSection].mustHitSection) //if mustHit is true then focus on bf
