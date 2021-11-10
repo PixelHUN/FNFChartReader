@@ -7,4 +7,5 @@ else if(isSusNote)
 else
 	depth = -1000;
 
-draw_sprite_stretched_ext(sprite,0,x,y,s_width,s_height,_col,alpha);
+if(onScreen)
+	draw_sprite_stretched_ext(sprite,0,x,y,s_width,s_height,_col,alpha);

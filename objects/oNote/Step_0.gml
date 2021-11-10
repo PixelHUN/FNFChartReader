@@ -1,84 +1,86 @@
-if(mustPress)
+if(onScreen)
 {
-	if(isSusNote)
-	{
-		if(strumTime > oConductor.songPosition - (oConductor.safeZoneOffset * 1.75) && strumTime < oConductor.songPosition + (oConductor.safeZoneOffset * 0.9))
-			canBeHit = true;
-		else
-			canBeHit = false;
-	}
-	else
-	{
-		if (strumTime > oConductor.songPosition - oConductor.safeZoneOffset && strumTime < oConductor.songPosition + oConductor.safeZoneOffset)
-			canBeHit = true;
-		else
-			canBeHit = false;
-	}
-
-	if (strumTime < oConductor.songPosition - oConductor.safeZoneOffset * oConductor.timeScale && !wasGoodHit)
-		tooLate = true;
-}
-else
-{
-	canBeHit = false;
-	
-	if(strumTime <= oConductor.songPosition) && (!isSusNote)
-		wasGoodHit = true;
-	else if(strumTime <= oConductor.songPosition + 100)
-		wasGoodHit = true;
-}
-
-if(tooLate)
-{
-	if(alpha > 0.3)
-		alpha = 0.3;
-}
-
-if(wasGoodHit)
-{
-	if(mustPress) && (!isSusNote)
-	{
-		var _popupScore = instance_create_layer(oChartReader._gf.x,oChartReader._gf.y,"Instances",oPopUp);
-		_popupScore.daNote = self;
-	}
-	
-	var _anim = "idle";
-
-	switch(noteData)
-	{
-		case 0:
-			_anim = "singLeft";
-			break;
-			
-		case 1:
-			_anim = "singDown";
-			break;
-			
-		case 2:
-			_anim = "singUp";
-			break;
-			
-		case 3:
-			_anim = "singRight";
-			break;
-	}
 	if(mustPress)
 	{
-		oChartReader._bf.danced = false;
-		oChartReader._bf.animtimer = 0;
-		oChartReader._bf.animframe = 0;
-		oChartReader._bf.animstate = _anim;
+		if(isSusNote)
+		{
+			if(strumTime > oConductor.songPosition - (oConductor.safeZoneOffset * 1.75) && strumTime < oConductor.songPosition + (oConductor.safeZoneOffset * 0.9))
+				canBeHit = true;
+			else
+				canBeHit = false;
+		}
+		else
+		{
+			if (strumTime > oConductor.songPosition - oConductor.safeZoneOffset && strumTime < oConductor.songPosition + oConductor.safeZoneOffset)
+				canBeHit = true;
+			else
+				canBeHit = false;
+		}
+
+		if (strumTime < oConductor.songPosition - oConductor.safeZoneOffset * oConductor.timeScale && !wasGoodHit)
+			tooLate = true;
 	}
 	else
 	{
-		oChartReader._dad.danced = false;
-		oChartReader._dad.animtimer = 0;
-		oChartReader._dad.animframe = 0;
-		oChartReader._dad.animstate = _anim;
+		canBeHit = false;
+	
+		if(strumTime <= oConductor.songPosition) && (!isSusNote)
+			wasGoodHit = true;
+		else if(strumTime <= oConductor.songPosition + 100)
+			wasGoodHit = true;
 	}
-	instance_destroy();
-}
 
+	if(tooLate)
+	{
+		if(alpha > 0.3)
+			alpha = 0.3;
+	}
+
+	if(wasGoodHit)
+	{
+		if(mustPress) && (!isSusNote)
+		{
+			var _popupScore = instance_create_layer(oChartReader._gf.x,oChartReader._gf.y,"Instances",oPopUp);
+			_popupScore.daNote = self;
+		}
+	
+		var _anim = "idle";
+
+		switch(noteData)
+		{
+			case 0:
+				_anim = "singLeft";
+				break;
+			
+			case 1:
+				_anim = "singDown";
+				break;
+			
+			case 2:
+				_anim = "singUp";
+				break;
+			
+			case 3:
+				_anim = "singRight";
+				break;
+		}
+		if(mustPress)
+		{
+			oChartReader._bf.danced = false;
+			oChartReader._bf.animtimer = 0;
+			oChartReader._bf.animframe = 0;
+			oChartReader._bf.animstate = _anim;
+		}
+		else
+		{
+			oChartReader._dad.danced = false;
+			oChartReader._dad.animtimer = 0;
+			oChartReader._dad.animframe = 0;
+			oChartReader._dad.animstate = _anim;
+		}
+		instance_destroy();
+	}
+}
 daSong = oNoteHandler.daSong;
 if(mustPress)
 	y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - (oConductor.songPosition - strumTime) * (0.45 * daSong.speed));
@@ -140,3 +142,6 @@ if(oInputHandler.botplay) && (mustPress)
 		}
 	}
 }
+
+if(!onScreen && y < _dish*1.1)
+	onScreen = true;

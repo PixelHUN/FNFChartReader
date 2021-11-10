@@ -1,2 +1,2 @@
-crochet = (room_speed / bpm) * 1000;
+crochet = (60 / bpm) * 1000;
 stepCrochet = crochet / 4;

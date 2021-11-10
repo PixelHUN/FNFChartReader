@@ -1,1 +1,1 @@
-draw_text(0,0,songScore);
+draw_text(0,700,songScore);

@@ -1,5 +1,5 @@
 bpm = 100;
-crochet = (room_speed / bpm) * 1000; // beats in ms
+crochet = (60 / bpm) * 1000; // beats in ms
 stepCrochet = crochet / 4; //steps in ms
 songPosition = 0;
 
@@ -15,7 +15,7 @@ musvoice = 0;
 
 //safe zone stuff for timing windows
 safeFrames = 10;
-safeZoneOffset = floor((safeFrames / room_speed) * 1000);
+safeZoneOffset = floor((safeFrames / 60) * 1000);
 timeScale = safeZoneOffset / 166;
 
 //beat counting stuff

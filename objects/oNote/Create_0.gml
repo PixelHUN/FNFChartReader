@@ -14,4 +14,7 @@ alpha = 1;
 sprite = arrow_static;
 yOffset = 0;
 
+onScreen = false;
+_dish = display_get_gui_height();
+
 event_user(0);

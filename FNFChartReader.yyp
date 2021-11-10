@@ -205,6 +205,9 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/sprite/gameover","resourceVersion":"1.0","name":"bfdies_strip.png","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"gameOverEnd.ogg","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"gameOver.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Expurgation_Inst.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Expurgation_Voices.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/expurgation","resourceVersion":"1.0","name":"expurgation-hard.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",

@@ -9,7 +9,7 @@ if(audio_is_playing(musinst))
 	songPosition = audio_sound_get_track_position(musinst)*1000;
 	
 	//set curBeat as float
-	curDecimalBeat = (songPosition / 1000) * bpm / room_speed;
+	curDecimalBeat = (songPosition / 1000) * bpm / 60;
 	
 	//getting the curStep (with some crazy shit)
 	nextStep = floor(songPosition / stepCrochet);
