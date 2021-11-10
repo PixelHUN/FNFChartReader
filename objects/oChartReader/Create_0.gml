@@ -105,6 +105,7 @@ for(var i = 0; i < array_length(daNotes); i++)
 				susNote.mustPress = _gottaHit;
 				susNote.isSusNote = true;
 				susNote.susActive = true;
+				susNote.hpMiss = 0.05;
 			
 				if(_gottaHit)
 					susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*0.7)*4;
@@ -151,5 +152,13 @@ _dad.character = daSong.player2;
 if(daSong.player2 == "mom-car")
 {
 	_dad.character = "mom";
+}
+if(_dad.character == "gf")
+{
+	_dad.x = _gf.x;
+	_dad.y = _gf.y;
+	_dad._x = _gf.x;
+	_dad._y = _gf.y;
+	_dad.camoffsetx = 120;
 }
 with(_dad) event_user(0);

@@ -30,6 +30,16 @@ curBeat = 0;
 beatHit = false;
 stepHit = false;
 
+//hp stuff
+hp = 1;
+misses = 0;
+icon = 0;
+icon2 = 1;
+_zoom = 1;
+
+hpbarx = display_get_gui_width()/2-sprite_get_width(spr.hpbar)/2;
+hpbary = display_get_gui_height()-sprite_get_height(spr.hpbar)-32;
+
 instance_create_layer(0,0,"Instances",oChartReader); //Reading the chart
 instance_create_layer(0,0,"Instances",oInputHandler); //Input handler for handling input <- wow really?
 instance_create_layer(0,0,"Instances",oCamera); //Da Camera

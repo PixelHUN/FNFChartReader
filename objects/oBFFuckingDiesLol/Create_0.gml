@@ -10,6 +10,7 @@ gameovermusic = 0;
 audio_stop_all();
 instance_destroy(oNote);
 instance_destroy(oCharacter);
+instance_destroy(oPopUp);
 layer_destroy(oStage.layer3);
 instance_destroy(oConductor);
 instance_destroy(oNoteHandler);
@@ -18,7 +19,7 @@ oCamera.targetx = x+220;
 oCamera.targety = y+220;
 
 bpm = 100;
-crochet = (room_speed / bpm) * 1000; // beats ms
+crochet = (60 / bpm) * 1000; // beats ms
 stepCrochet = crochet / 4; //steps ms
 songPosition = 0;
 
@@ -32,3 +33,6 @@ beatHit = false;
 
 retrying = false;
 alpha = -0.5;
+
+sfx = audio_create_stream("assets/sound/fnf_loss_sfx.ogg");
+audio_play_sound(sfx,0,false);

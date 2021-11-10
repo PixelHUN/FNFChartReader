@@ -8,11 +8,13 @@ if(lastScore == oConductor.songScore)
 	if (noteDiff > oConductor.safeZoneOffset * 0.9)
 	{
 		daRating = "shit";
+		hpadd = -0.1;
 		_score = 50;
 	}
 	else if (noteDiff > oConductor.safeZoneOffset * 0.75)
 	{
 		daRating = "bad";
+		hpadd = -0.05;
 		_score = 100;
 	}
 	else if (noteDiff > oConductor.safeZoneOffset * 0.2)
@@ -22,6 +24,7 @@ if(lastScore == oConductor.songScore)
 	}
 
 	oConductor.songScore += _score;
+	oConductor.hp += hpadd;
 }
 
 switch(daRating)

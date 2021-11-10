@@ -39,6 +39,7 @@ if(audio_is_playing(musinst))
 			beatHit = true;
 	}
 	
+	_zoom = lerp(_zoom, 1, 0.1);
 	//stuff happens when we hit da beat lmao
 	if(beatHit)
 	{
@@ -46,22 +47,38 @@ if(audio_is_playing(musinst))
 		{
 			curSection++;
 			oCamera.zoomout = oCamera.targetzoomout-0.05;
+			_zoom = 1.05;
 		}
 		//Hardcoded MILF zooming shit
 		if(oChartReader.daSong.song = "Milf" && curBeat >= 168 && curBeat <= 200)
 		{
 			oCamera.zoomout = oCamera.targetzoomout-0.05;
+			_zoom = 1.05;
 		}
 		
-		if(oChartReader.daNotes[curSection].mustHitSection) //if mustHit is true then focus on bf
+		if(oChartReader._dad.character = "gf") //hardcoding for gf zooming shit
 		{
-			camera_point_to(0, 1.1);
+			if(oChartReader.daNotes[curSection].mustHitSection) //if mustHit is true then focus on bf
+			{
+				camera_point_to(0, 1.05);
+			}
+			else //focus on gf
+			{
+				camera_point_to(1, 0.8);
+			}
 		}
-		else //focus on dad
+		else
 		{
-			camera_point_to(1, 1.1);
+			if(oChartReader.daNotes[curSection].mustHitSection) //if mustHit is true then focus on bf
+			{
+				camera_point_to(0);
+			}
+			else //focus on dad
+			{
+				camera_point_to(1);
+			}
 		}
-		//SCROLL PAST THIS SHIT I WAS HAVING FUN
+		//SCROLL PAST THIS SHIT, I WAS HAVING FUN
 		//if(variable_struct_exists(oChartReader.daNotes[curSection], "altAnim")) && (oChartReader.daNotes[(curBeat/4)].altAnim)
 			//oChartReader._dad.character = "mom";
 		//else
@@ -137,3 +154,13 @@ if(audio_sound_get_track_position(musinst) >= audio_sound_length(musinst)-0.05) 
 	_trans.transIn = false;
 	_trans.roomTo = Freeplay;
 }
+
+//hp = 0? if yes bf should fucking die
+if(hp <= 0)
+{
+	instance_create_layer(oChartReader._bf.x-100,oChartReader._bf.y-100,"Instances",oBFFuckingDiesLol);
+}
+
+//hp more than max? make it max
+if(hp > 2)
+	hp = 2;

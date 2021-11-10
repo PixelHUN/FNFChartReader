@@ -1,6 +1,6 @@
 songPosition = audio_sound_get_track_position(musinst)*1000;
 	
-curDecimalBeat = (songPosition / 1000) * bpm / room_speed;
+curDecimalBeat = (songPosition / 1000) * bpm / 60;
 nextStep = floor(songPosition / stepCrochet);
 
 stepHit = false;

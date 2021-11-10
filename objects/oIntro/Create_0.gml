@@ -1,5 +1,5 @@
 bpm = 102;
-crochet = (room_speed / bpm) * 1000; // beats ms
+crochet = (60 / bpm) * 1000; // beats ms
 stepCrochet = crochet / 4; //steps ms
 songPosition = 0;
 
