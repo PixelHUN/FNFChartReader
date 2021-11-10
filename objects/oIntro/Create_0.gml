@@ -1,3 +1,5 @@
+gpu_set_tex_filter(true);
+
 bpm = 102;
 crochet = (60 / bpm) * 1000; // beats ms
 stepCrochet = crochet / 4; //steps ms

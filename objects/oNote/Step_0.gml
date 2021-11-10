@@ -37,6 +37,7 @@ if(onScreen)
 			alpha = 0.3;
 			oConductor.hp -= hpMiss;
 			oConductor.misses++;
+			oConductor.songScore -= 10;
 			var _misssfx = "assets/sound/missnote"+string(irandom_range(1,3))+".ogg"
 			var _sound = audio_create_stream(_misssfx);
 			audio_play_sound(_sound,0,false);
