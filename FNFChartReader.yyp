@@ -252,6 +252,13 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/characters","resourceVersion":"1.0","name":"mom.txt","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/sprite/characters","resourceVersion":"1.0","name":"pico_strip.png","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/characters","resourceVersion":"1.0","name":"pico.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/expurgation","resourceVersion":"1.0","name":"expurgation-hard.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/thunderstorm","resourceVersion":"1.0","name":"events.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/thunderstorm","resourceVersion":"1.0","name":"thunderstorm-easy.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/thunderstorm","resourceVersion":"1.0","name":"thunderstorm-hard.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/thunderstorm","resourceVersion":"1.0","name":"thunderstorm.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Thunderstorm_Inst.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Thunderstorm_Voices.ogg","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",

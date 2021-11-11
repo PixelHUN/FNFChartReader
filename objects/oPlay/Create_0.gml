@@ -7,6 +7,7 @@ vsync = true;
 lastvsync = vsync;
 fpscap = 120;
 lowframerate = false;
+_paused = false;
 
 version = "0.1 (DEV)";
 
