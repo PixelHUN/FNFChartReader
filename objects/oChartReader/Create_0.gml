@@ -91,7 +91,7 @@ for(var i = 0; i < array_length(daNotes); i++)
 		
 		if(_susLength > 0)
 		{
-			for(var iii = floor(_susLength)+1; iii >= 0; iii--)
+			for(var iii = floor(_susLength); iii >= 0; iii--)
 			{
 				var _prevNote = undefined
 				if(array_length(unspawnNotes) > 0)
