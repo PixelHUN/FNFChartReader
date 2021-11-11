@@ -35,25 +35,51 @@ if(character != "gf")
 			case "singLeft":
 				x = _x+offsetleft[0];
 				y = _y+offsetleft[1];
-				if(!danced)
+				if(xscale == -1)
 				{
-					animkey = 7;
-					danced = true;
+					if(!danced)
+					{
+						animkey = 9;
+						danced = true;
+					}
+					if(animkey >= 10)
+						animkey = 10;
 				}
-				if(animkey >= 8)
-					animkey = 8;
+				else
+				{
+					if(!danced)
+					{
+						animkey = 7;
+						danced = true;
+					}
+					if(animkey >= 8)
+						animkey = 8;
+				}
 				break;
 			
 			case "singRight":
 				x = _x+offsetright[0];
 				y = _y+offsetright[1];
-				if(!danced)
+				if(xscale == -1)
 				{
-					animkey = 9;
-					danced = true;
+					if(!danced)
+					{
+						animkey = 7;
+						danced = true;
+					}
+					if(animkey >= 8)
+						animkey = 8;
 				}
-				if(animkey >= 10)
-					animkey = 10;
+				else
+				{
+					if(!danced)
+					{
+						animkey = 9;
+						danced = true;
+					}
+					if(animkey >= 10)
+						animkey = 10;
+				}
 				break;
 			
 			case "singUp":

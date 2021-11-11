@@ -46,13 +46,13 @@ if(audio_is_playing(musinst))
 		if(array_length(oChartReader.daNotes)-1 > curSection) && (curBeat mod 4 == 0) //zooming on every bar
 		{
 			curSection++;
-			oCamera.zoomout = oCamera.targetzoomout-0.05;
+			oCamera.zoomout = oCamera.targetzoomout-0.055;
 			_zoom = 1.05;
 		}
 		//Hardcoded MILF zooming shit
 		if(oChartReader.daSong.song = "Milf" && curBeat >= 168 && curBeat <= 200)
 		{
-			oCamera.zoomout = oCamera.targetzoomout-0.05;
+			oCamera.zoomout = oCamera.targetzoomout-0.055;
 			_zoom = 1.05;
 		}
 		

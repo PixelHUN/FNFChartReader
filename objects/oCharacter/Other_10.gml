@@ -28,6 +28,12 @@ try
 	
 	if(character == "gf")
 		framerate = 24;
+	if(character == "pico")
+	{
+		xscale = -1;
+		_x += 50;
+		_y = 450;
+	}
 }
 catch(_e)
 {

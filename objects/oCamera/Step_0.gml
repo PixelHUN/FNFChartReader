@@ -2,7 +2,7 @@
 //camy = camera_get_view_y(camera);
 camx = lerp(camx, targetx, smoothing);
 camy = lerp(camy, targety, smoothing);
-zoomout = lerp(zoomout, targetzoomout, smoothing)
+zoomout = lerp(zoomout, targetzoomout, 0.045)
 
 camera_set_view_size(camera,camw*zoomout,camh*zoomout);
 var vieww = camera_get_view_width(camera);
