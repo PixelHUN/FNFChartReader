@@ -11,7 +11,7 @@ FNF Chart Reader, as the name suggests, can:
  - Play Charts
  - Character Support
  - Stage Support
- - Easily modifiably reading Included Files rather then packing up all the files
+ - Easily modifiably file reading, using Included Files rather then packing them up inside the editor
 
 # Development Progress
 
