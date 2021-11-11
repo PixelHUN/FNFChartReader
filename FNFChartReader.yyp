@@ -244,6 +244,10 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"titleShoot.ogg","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Winter-Horrorland_Inst.ogg","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Winter-Horrorland_Voices.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/characters","resourceVersion":"1.0","name":"bf.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/characters","resourceVersion":"1.0","name":"gf.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/characters","resourceVersion":"1.0","name":"dad.txt","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/characters","resourceVersion":"1.0","name":"mom.txt","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",
