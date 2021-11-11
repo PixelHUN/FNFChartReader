@@ -30,6 +30,9 @@ switch(noteData)
 if(isSusNote && prevNote != undefined)
 {
 	alpha = 0.6;
+	var stepHeight = (0.45 * oConductor.stepCrochet) * oChartReader.daSong.speed;
+	
+	yOffset = round(-stepHeight + s_width * 0.5);
 	
 	s_width = 50*0.7;
 	s_height = 50*0.7;
@@ -70,12 +73,9 @@ if(isSusNote && prevNote != undefined)
 		}
 		show_debug_message(string(prevNote.strumTime)+" - "+string(strumTime));
 		
-		var stepHeight = (0.45 * oConductor.stepCrochet) * oChartReader.daSong.speed;
+		//if(prevNote.isSusNote)
 		
-		if(prevNote.prevNote.isSusNote) && (oPlay.downscroll)
-			prevNote.s_height = -prevNote.s_height * ((stepHeight + 1) / prevNote.s_height);
-		else if(prevNote.prevNote.isSusNote)
-			prevNote.s_height *= (stepHeight + 1) / prevNote.s_height;
 	}
+	s_height *= (stepHeight + 1) / s_height;
 }
 

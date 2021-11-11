@@ -1,5 +1,7 @@
 if(onScreen)
 {
+	if(oPlay.downscroll && s_height > 0 && isSusNote)
+		s_height = -s_height;
 	if(mustPress)
 	{
 		if(isSusNote)
@@ -116,20 +118,18 @@ daSong = oNoteHandler.daSong;
 if(oPlay.downscroll)
 {
 	if(mustPress)
-		y = (oNoteHandler._disy + (oConductor.songPosition - strumTime) * (0.45 * daSong.speed));
+		y = (oNoteHandler._disy + (oConductor.songPosition - strumTime) * (0.45 * daSong.speed)) + yOffset;
 	else
-		y = (oNoteHandler._disy + (oConductor.songPosition - strumTime) * (0.45 * daSong.speed));
-	if(isSusNote) && (sprite != spr.leftholdend) || (sprite != spr.downholdend) || (sprite != spr.upholdend) || (sprite != spr.rightholdend)
-		y += s_height / 2;
-	else if(isSusNote)
-		y += prevNote.s_height;
+		y = (oNoteHandler._disy + (oConductor.songPosition - strumTime) * (0.45 * daSong.speed)) + yOffset;
+	if(isSusNote)
+		y -= s_height*2;
 }
 else
 {
 	if(mustPress)
-		y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - (oConductor.songPosition - strumTime) * (0.45 * daSong.speed));
+		y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - (oConductor.songPosition - strumTime) * (0.45 * daSong.speed)) - yOffset;
 	else
-		y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - (oConductor.songPosition - strumTime) * (0.45 * daSong.speed));
+		y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 - (oConductor.songPosition - strumTime) * (0.45 * daSong.speed)) - yOffset;
 	if(isSusNote)
 		y -= s_height / 2;
 }
