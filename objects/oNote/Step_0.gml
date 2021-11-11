@@ -118,7 +118,7 @@ daSong = oNoteHandler.daSong;
 if(oPlay.downscroll)
 {
 	if(mustPress)
-		y = (oNoteHandler._disy + (oConductor.songPosition - strumTime) * (0.45 * daSong.speed)) + yOffset;
+		y = (oNoteHandler._disy-sprite_get_height(arrow_static)*0.7/2 + (oConductor.songPosition - strumTime) * (0.45 * daSong.speed)) + yOffset;
 	else
 		y = (oNoteHandler._disy + (oConductor.songPosition - strumTime) * (0.45 * daSong.speed)) + yOffset;
 	if(isSusNote)
