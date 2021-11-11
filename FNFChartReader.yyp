@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"Freeplay","path":"rooms/Freeplay/Freeplay.yy",},"order":2,},
     {"id":{"name":"purple","path":"sprites/purple/purple.yy",},"order":8,},
+    {"id":{"name":"bfxd","path":"sprites/bfxd/bfxd.yy",},"order":20,},
     {"id":{"name":"green","path":"sprites/green/green.yy",},"order":4,},
     {"id":{"name":"menuDesat","path":"sprites/menuDesat/menuDesat.yy",},"order":16,},
     {"id":{"name":"blue_hold_piece","path":"sprites/blue_hold_piece/blue_hold_piece.yy",},"order":3,},

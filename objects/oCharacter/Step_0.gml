@@ -79,6 +79,53 @@ if(character != "gf")
 				if(animkey >= 14)
 					animkey = 14;
 				break;
+			case "missLeft":
+				x = _x+offsetleft[0];
+				y = _y+offsetleft[1]-10;
+				if(!danced)
+				{
+					animkey = 15;
+					danced = true;
+				}
+				if(animkey >= 16)
+					animkey = 16;
+				break;
+			
+			case "missRight":
+				x = _x+offsetright[0];
+				y = _y+offsetright[1]-10;
+				if(!danced)
+				{
+					animkey = 17;
+					danced = true;
+				}
+				if(animkey >= 18)
+					animkey = 18;
+				break;
+			
+			case "missUp":
+				x = _x+offsetup[0];
+				y = _y+offsetup[1]-10;
+				if(!danced)
+				{
+					animkey = 19;
+					danced = true;
+				}
+				if(animkey >= 20)
+					animkey = 20;
+				break;
+			
+			case "missDown":
+				x = _x+offsetdown[0];
+				y = _y+offsetdown[1]-10;
+				if(!danced)
+				{
+					animkey = 21;
+					danced = true;
+				}
+				if(animkey >= 22)
+					animkey = 22;
+				break;
 		}
 		animframe += framerate/room_speed;
 		animtimer += 1/room_speed * 1000;

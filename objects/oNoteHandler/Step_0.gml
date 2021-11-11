@@ -85,6 +85,13 @@ if(key_up || key_right || key_down || key_left)
 		var _misssfx = "assets/sound/missnote"+string(irandom_range(1,3))+".ogg"
 		var _sound = audio_create_stream(_misssfx);
 		audio_play_sound(_sound,0,false);
+		oChartReader._bf.danced = false;
+		oChartReader._bf.animtimer = 0;
+		oChartReader._bf.animframe = 0;
+		if(key_left) oChartReader._bf.animstate = "missLeft";
+		if(key_down) oChartReader._bf.animstate = "missDown";
+		if(key_up) oChartReader._bf.animstate = "missUp";
+		if(key_right) oChartReader._bf.animstate = "missRight";
 	}
 }
 
