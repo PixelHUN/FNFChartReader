@@ -84,13 +84,14 @@ for(var i = 0; i < array_length(daNotes); i++)
 		with(daNote) event_user(0);
 		
 		//sustain notes (i hated programming this even tho i pretty much copied it from the original source code however it didn't want to work >:O)
+		var _daStrumTime = daNote.strumTime;
 		var _susLength = daNote.sustainLength;
-		_susLength /= oConductor.stepCrochet;
+		_susLength = _susLength / oConductor.stepCrochet;
 		array_push(unspawnNotes, daNote);
 		
 		if(_susLength > 0)
 		{
-			for(var iii = floor(_susLength)+1; iii >= 0; iii--)
+			for(var iii = floor(_susLength); iii >= 0; iii--)
 			{
 				var _prevNote = undefined
 				if(array_length(unspawnNotes) > 0)
@@ -99,7 +100,7 @@ for(var i = 0; i < array_length(daNotes); i++)
 					_prevNote = undefined;
 				
 				var susNote = instance_create_layer(0,0,"Notes",oNote);
-				susNote.strumTime = daNotes[i].sectionNotes[ii, 0] + (oConductor.stepCrochet * iii) + oConductor.stepCrochet;
+				susNote.strumTime = _daStrumTime + (oConductor.stepCrochet * iii) + oConductor.stepCrochet;
 				susNote.noteData = _prevNote.noteData; //daNotes[i].sectionNotes[ii, 1];
 				susNote.prevNote = _prevNote;
 				susNote.mustPress = _gottaHit;

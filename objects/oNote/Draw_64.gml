@@ -1,11 +1,7 @@
 var _col = c_white;
 
 if(strumTime <= oConductor.songPosition+oConductor.safeZoneOffset*1.1 && isSusNote)
-	depth = 1000;
-else if(isSusNote)
-	depth = -900;
-else
-	depth = -1000;
+	depth = 1000; //this should put the strumnote behind the thing but IT SOMETIMES JUST DOESN'T >:O
 
 if(onScreen)
-	draw_sprite_stretched_ext(sprite,0,x,y,s_width,s_height,_col,alpha);
+	draw_sprite_ext(sprite,0,x,y,s_width/sprite_get_width(sprite),s_height/sprite_get_height(sprite),0,c_white,alpha);

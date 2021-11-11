@@ -1,6 +1,8 @@
 songname = "bopeebo";
 difficulty = "";
 
+downscroll = false;
+
 depth = -999;
 
 vsync = true;

@@ -210,7 +210,6 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/high","resourceVersion":"1.0","name":"high-hard.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/high","resourceVersion":"1.0","name":"high.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/monster","resourceVersion":"1.0","name":"monster.json","resourceType":"GMIncludedFile",},
-    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/ridge","resourceVersion":"1.0","name":"ridge.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/roses","resourceVersion":"1.0","name":"roses-hard.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/roses","resourceVersion":"1.0","name":"roses-easy.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/roses","resourceVersion":"1.0","name":"roses.json","resourceType":"GMIncludedFile",},
