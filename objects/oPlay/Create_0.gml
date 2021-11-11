@@ -4,6 +4,7 @@ difficulty = "";
 depth = -999;
 
 vsync = true;
+lastvsync = vsync;
 fpscap = 120;
 lowframerate = false;
 

@@ -1,4 +1,5 @@
-selectiondisplay = lerp(selectiondisplay, selection, 0.25);
+var _dt = delta_time / 1000000;
+selectiondisplay = lerp(selectiondisplay, selection, 10 * _dt);
 
 var _hueNew = lerp(100,160,selection/(array_length(freeplaysonglist)-1)); //255*selection/array_length(freeplaysonglist); //lerp(0,255,selection/array_length(freeplaysonglist)-1);
 

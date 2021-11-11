@@ -15,3 +15,13 @@ if(!vsync)
 		lowframerate = false;
 	}
 }
+else
+{
+	if(room_speed != 60)
+		room_speed = 60;
+}
+
+if(lastvsync != vsync)
+	display_reset(0, vsync);
+
+lastvsync = vsync;

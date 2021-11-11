@@ -1,8 +1,10 @@
 //camx = camera_get_view_x(camera);
 //camy = camera_get_view_y(camera);
-camx = lerp(camx, targetx, smoothing);
-camy = lerp(camy, targety, smoothing);
-zoomout = lerp(zoomout, targetzoomout, 0.045)
+//delta time shit, so framerate doesn't change camera speed
+var _dt = delta_time / 1000000;
+camx = lerp(camx, targetx, smoothing * _dt);
+camy = lerp(camy, targety, smoothing * _dt);
+zoomout = lerp(zoomout, targetzoomout, 5 * _dt)
 
 camera_set_view_size(camera,camw*zoomout,camh*zoomout);
 var vieww = camera_get_view_width(camera);
