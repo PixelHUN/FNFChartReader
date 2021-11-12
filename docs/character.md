@@ -107,3 +107,30 @@ Navigate into sprite/characters and put your image strip here.<br>
 ![mommy file](https://user-images.githubusercontent.com/59181913/141500630-06704316-28f0-4951-9bf2-969825259424.png)
 
 And with that the graphical part is now ready for your character!
+
+## The Character File.
+
+Each character has it's own character file. It's necessary to have, since it's used for storing all the information about your character.
+
+### Creating a Character File for your own character
+
+Navigate to assets/characters and create a new .txt file with it's name being your characters name.<br>
+*Mom's character file sitting next to all the other character files.*
+![mom file](https://user-images.githubusercontent.com/59181913/141501396-aa9b71cb-01bb-471a-b66e-22e6b741e735.png)
+
+A Character File stores information about that specific character. Each line is a new piece of information.
+1. Image Strip Name (the name of the image strip in assets/sprite/characters)
+2. Frame Count (how many frames does the image strip have)
+3. Sing Left Animation Offset (x offset **comma** y offset)
+4. Sing Right Animation Offset (x offset **comma** y offset)
+5. Sing Up Animation Offset (x offset **comma** y offset)
+6. Sing Down Animation Offset (x offset **comma** y offset)
+7. Camera X Offset (how many pixels should the camera be offseted on the x when focusing on the character)
+8. Camera Y Offset (how many pixels should the camera be offseted on the y when focusing on the character)
+
+*Mom's character file:*
+![charfile](https://user-images.githubusercontent.com/59181913/141502542-da104fec-4da7-4b29-9485-944735901779.png)
+
+--------
+
+If everything has been set up correctly, your character should now work in game!
