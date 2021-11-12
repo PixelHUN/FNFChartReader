@@ -81,7 +81,7 @@ Using the import button we can import **all** frames into the editor.<br>
 
 When given the option to resize the image, select **Resize Canvas**, and choose a size that would fit all of your sprites.
 
-*750x850 should be big enough for all Mom's frames*<br>
+*750x850 should be big enough for all of Mom's frames*<br>
 ![size](https://user-images.githubusercontent.com/59181913/141498320-ad87ce5b-13ef-430f-b7c8-527bd84556bc.png)
 
 Now it's time to reorder our frames to match the order mentioned *above*.<br>
@@ -115,7 +115,7 @@ Each character has it's own character file. It's necessary to have, since it's u
 ### Creating a Character File for your own character
 
 Navigate to assets/characters and create a new .txt file with it's name being your characters name.<br>
-*Mom's character file sitting next to all the other character files.*
+*Mom's character file sitting next to all the other character files.*<br>
 ![mom file](https://user-images.githubusercontent.com/59181913/141501396-aa9b71cb-01bb-471a-b66e-22e6b741e735.png)
 
 A Character File stores information about that specific character. Each line is a new piece of information.
