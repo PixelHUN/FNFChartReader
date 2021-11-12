@@ -24,7 +24,7 @@ When putting the image strip together, you must follow a strict pattern in the o
 This will make the sprite have **15 frames** all together.<br>
 Currently there's no support for alt-animations.
 
-## Get your sprites ready
+## Getting your sprites ready
 
 ### Exporting your sprites
 
@@ -63,3 +63,33 @@ If everything has been done correctly, we should have the required frames that a
 ![15 Frames of Mom](https://user-images.githubusercontent.com/59181913/141495826-ba42d71b-990d-4185-a5f1-afaa99f38fa1.png)
 
 And with that, your sprites are ready for the next step.
+
+## Creating the Image Strip
+
+*Example of an image strip: (containing Dad's animations)*<br>
+![dad_strip](https://user-images.githubusercontent.com/59181913/141497333-df7addd6-a07c-4c93-ae7d-0906a7e650ec.png)
+
+The easiest way of creating our image strip is to do it inside Game Maker: Studio 2.
+You can do this inside the FNF Chart Reader project, or inside your own project.
+
+### Create a new sprite and Import the frames
+
+First we'll create a sprite that we can import our frames into.
+Using the import button we can import **all** frames into the editor.<br>
+![new sprite](https://user-images.githubusercontent.com/59181913/141497926-1af41478-d5b9-4b00-95ee-9af4eba560b5.png)
+![selected frames](https://user-images.githubusercontent.com/59181913/141498077-3526fa96-076f-4c7f-aca7-747881403d94.png)
+
+When given the option to resize the image, select **Resize Canvas**, and choose a size that would fit all of your sprites.
+
+*750x850 should be big enough for all Mom's frames*<br>
+![size](https://user-images.githubusercontent.com/59181913/141498320-ad87ce5b-13ef-430f-b7c8-527bd84556bc.png)
+
+Now it's time to reorder our frames to match the order mentioned *above*.<br>
+(Idle, Sing Left, Sing Right, Sing Up, Sing Down)<br>
+![correct order](https://user-images.githubusercontent.com/59181913/141498823-4f58212f-ce2e-4a14-92d7-ae2a15131e9c.png)
+
+After everything is done, click on **Image** and click Export to PNG. You can export it straight into the project folder, or back into the folder where you stored your characters sprites.<br>
+![export](https://user-images.githubusercontent.com/59181913/141499059-80634d42-538c-4f03-8574-ee3fbc88bc1c.png)
+![mom_strip.png](https://user-images.githubusercontent.com/59181913/141499356-fdfb35c0-e6b5-4d5e-a941-23c89a108ec7.png)
+
+### Making the image strip readable for the game
