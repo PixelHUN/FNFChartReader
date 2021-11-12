@@ -22,14 +22,14 @@ FNF Chart Reader, as the name suggests, can:
 # Development Progress
 
 My goal is to create an *as close as possible* remake of FNF in GMS2, while making it as easily modifiably as I can.
- - [x] Make characters and stages be read from a file
- - [ ] Implement all characters
- - [ ] Implement all stages
- - [ ] Implement a week system
- - [ ] Make weeks be read from a file
- - [ ] Implement all weeks
- - [ ] Mod support (without file replacing)
- - [ ] QoL features (such as downscroll, scroll speed modifiers)
+ - ~~Make characters and stages be read from a file~~
+ - Implement all characters
+ - Implement all stages
+ - Implement a week system
+ - Make weeks be read from a file
+ - Implement all weeks
+ - Mod support (without file replacing)
+ - QoL features (such as downscroll, scroll speed modifiers)
 
 # Preview
 
