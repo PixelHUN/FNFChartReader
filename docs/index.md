@@ -2,6 +2,10 @@
 title: FNF GMS2 Remake
 ---
 
+[Docs](https://pixelhun.github.io/FNFChartReader/)
+
+========
+
 # FNF Chart Reader (aka FNF GMS2 remake)
  
 A Friday Night Funkin' chart reader made in Game Maker: Studio 2, and a remake of the game (still being in very early stages).
