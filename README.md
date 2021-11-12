@@ -39,7 +39,9 @@ BF Dead lol:
 
 # Building
 
-just download GMS2 and open the project, it doesn't need anything else lol
+~~just download GMS2 and open the project, it doesn't need anything else lol~~
+
+[Documentation](https://pixelhun.github.io/FNFChartReader/)
 
 # Contribution
 
