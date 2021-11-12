@@ -2,7 +2,9 @@
 title: FNF GMS2 Remake
 ---
 
-<p style="text-align: center;">[Docs](https://pixelhun.github.io/FNFChartReader/)</p>
+<p align="center"> 
+[Docs](https://pixelhun.github.io/FNFChartReader/)
+</p>
 
 ---------------------------------
 
