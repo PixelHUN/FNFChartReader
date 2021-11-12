@@ -3,7 +3,7 @@ title: FNF GMS2 Remake
 ---
 
 <p align="center"> 
-[Docs](https://pixelhun.github.io/FNFChartReader/)
+<a href=#index>Index</a>
 </p>
 
 ---------------------------------
