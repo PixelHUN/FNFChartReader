@@ -3,7 +3,7 @@ title: FNF GMS2 Remake
 ---
 
 <p align="center"> 
-<a href=#index>Index</a>
+<a href=index.md>Index</a>
 </p>
 
 ---------------------------------
