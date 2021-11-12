@@ -1,5 +1,9 @@
+global.menusong = 0;
+
 songname = "bopeebo";
 difficulty = "";
+
+_paused = false;
 
 downscroll = true;
 

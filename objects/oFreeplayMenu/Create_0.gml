@@ -19,12 +19,14 @@ songListen = false;
 freeplaysonglist = array_create(0);
 
 _breakfast = audio_create_stream("assets/music/breakfast.ogg");
-_menusong = audio_play_sound(_breakfast,0,true);
+if(!audio_is_playing(global.menusong))
+{
+	global.menusong = audio_play_sound(_breakfast,0,true);
+	audio_sound_gain(global.menusong,0,0)
+	audio_sound_gain(global.menusong,1,3000);
+}
 
 soundtest = 0;
-
-audio_sound_gain(_menusong,0,0)
-audio_sound_gain(_menusong,1,3000);
 
 //reading all the charts in the '/charts' folder and adding them to an array
 var _f = file_find_first("assets/charts/*", fa_directory);

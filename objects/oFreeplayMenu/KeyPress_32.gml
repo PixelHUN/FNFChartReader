@@ -8,7 +8,7 @@ if(!instance_exists(oTransition))
 	if(songListen)
 	{
 	
-		audio_sound_gain(_menusong,0,1000);
+		audio_sound_gain(global.menusong,0,1000);
 
 		var _songselection = freeplaysonglist[selection];
 
@@ -30,6 +30,6 @@ if(!instance_exists(oTransition))
 	else
 	{
 		audio_stop_sound(soundtest);
-		audio_sound_gain(_menusong,1,2000);
+		audio_sound_gain(global.menusong,1,2000);
 	}
 }
