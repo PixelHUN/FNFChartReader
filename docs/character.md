@@ -128,9 +128,11 @@ A Character File stores information about that specific character. Each line is 
 7. Camera X Offset (how many pixels should the camera be offseted on the x when focusing on the character)
 8. Camera Y Offset (how many pixels should the camera be offseted on the y when focusing on the character)
 
-*Mom's character file:*
+*Mom's character file:*<br>
 ![charfile](https://user-images.githubusercontent.com/59181913/141502542-da104fec-4da7-4b29-9485-944735901779.png)
 
 --------
 
-If everything has been set up correctly, your character should now work in game!
+If everything has been done correctly, your character should now work in game!<br>
+![ingame](https://user-images.githubusercontent.com/59181913/141503058-1a2f70c1-b6ac-42b9-a002-595ccb4f68e0.png)
+
