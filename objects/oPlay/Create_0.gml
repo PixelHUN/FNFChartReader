@@ -6,10 +6,11 @@ difficulty = "";
 _paused = false;
 
 downscroll = true;
+gas = false;
 
 depth = -999;
 
-vsync = true;
+vsync = false;
 lastvsync = vsync;
 fpscap = 120;
 lowframerate = false;

@@ -5,9 +5,10 @@ if(!vsync)
 		room_speed = fpscap;
 		show_debug_message("FPS Cap changed lmao");
 	}
-	if(fps_real < fpscap * 0.8)
+	if(fps_real < fpscap * 0.9)
 	{
 		room_speed = 60;
+		show_debug_message("oopsie my code is shit so low framerate");
 		lowframerate = true;
 	}
 	else

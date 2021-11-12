@@ -69,11 +69,18 @@ if(onScreen)
 		if(mustPress) && (!isSusNote)
 		{
 			var _popupScore = instance_create_layer(oChartReader._gf.x,oChartReader._gf.y,"Instances",oPopUp);
+			_popupScore.depth = -1000;
 			_popupScore.daNote = self;
 		}
 		else if(mustPress)
 		{
 			oConductor.hp += 0.01;
+		}
+		
+		if(!mustPress && oPlay.gas)
+		{
+			if(oConductor.hp > 0.05)
+				oConductor.hp -= 0.05;
 		}
 	
 		var _anim = "idle";
@@ -186,6 +193,7 @@ if(oInputHandler.botplay) && (mustPress)
 		}
 	}
 }
-
-if(!onScreen && y < _dish*1.1)
+if(!onScreen && y > -512 && oPlay.downscroll)
+	onScreen = true;
+else if(!onScreen && y < _dish*1.1 && !oPlay.downscroll)
 	onScreen = true;
