@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+---
+title: FNF GMS2 Remake
+---
 
-You can use the [editor on GitHub](https://github.com/PixelHUN/FNFChartReader/edit/latest-dev/docs/index.md) to maintain and preview the content for your website in Markdown files.
+<p align="center"> 
+<a href=docs>Documentation</a>
+</p>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+---------------------------------
 
-### Markdown
+# FNF Chart Reader (aka FNF GMS2 remake)
+ 
+A Friday Night Funkin' chart reader made in Game Maker: Studio 2, and a remake of the game (still being in very early stages).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Original Game:** https://github.com/ninjamuffin99/Funkin
 
-```markdown
-Syntax highlighted code block
+**Go give all the support to the original developers!!!**
 
-# Header 1
-## Header 2
-### Header 3
+# Current State
 
-- Bulleted
-- List
+FNF Chart Reader, as the name suggests, can:
+ - Read Charts (from original game **and Kade Engine made charts**) **However it must not be formatted in any way**
+ - Play Charts
+ - Character Support
+ - Stage Support
+ - Easily modifiably reading Included Files rather then packing up all the files
 
-1. Numbered
-2. List
+# Development Progress
 
-**Bold** and _Italic_ and `Code` text
+My goal is to create an *as close as possible* remake of FNF in GMS2, while making it as easily modifiably as I can.
+ - ~~Make characters and stages be read from a file~~
+ - Implement all characters
+ - Implement all stages
+ - Implement a week system
+ - Make weeks be read from a file
+ - Implement all weeks
+ - Mod support (without file replacing)
+ - QoL features (such as downscroll, scroll speed modifiers)
 
-[Link](url) and ![Image](src)
-```
+# Preview
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Freeplay Menu:
+![image](https://user-images.githubusercontent.com/59181913/141179724-775ff023-305d-4bf1-a586-84ae0e19da7b.png)
 
-### Jekyll Themes
+In-Game with Dad:
+![image](https://user-images.githubusercontent.com/59181913/141180040-5acd957e-a934-4406-aa6d-b663da46938c.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PixelHUN/FNFChartReader/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+BF Dead lol:
+![image](https://user-images.githubusercontent.com/59181913/141180082-58698df4-1a91-4826-9280-7cc797e188b9.png)
