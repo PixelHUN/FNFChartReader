@@ -93,3 +93,17 @@ After everything is done, click on **Image** and click Export to PNG. You can ex
 ![mom_strip.png](https://user-images.githubusercontent.com/59181913/141499356-fdfb35c0-e6b5-4d5e-a941-23c89a108ec7.png)
 
 ### Making the image strip readable for the game
+
+Open up the project (if you have built the game before open up the game's folder, and navigate into the assets folder), click on the hamburger menu icon in the **Asset Browser**
+and click **Included Files**.<br>
+![included files](https://user-images.githubusercontent.com/59181913/141499982-551d41c2-08ee-42ab-a010-100b187c1f1d.png)
+
+This will open up a little window, just click Open In Explorer, and navigate into the assets folder.<br>
+![open in explorer](https://user-images.githubusercontent.com/59181913/141500084-31159229-04d7-4a9b-b8f6-9ea948c37196.png)
+
+Navigate into sprite/characters and put your image strip here.<br>
+**Make sure it's called** ***yourcharactername_strip*** **and it's extension should be .png**<br>
+*Now Mom's image strip is sitting next to all the other characters strips.*<br>
+![mommy file](https://user-images.githubusercontent.com/59181913/141500630-06704316-28f0-4951-9bf2-969825259424.png)
+
+And with that the graphical part is now ready for your character!
