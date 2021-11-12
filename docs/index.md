@@ -4,7 +4,7 @@ title: FNF GMS2 Remake
 
 [Docs](https://pixelhun.github.io/FNFChartReader/)
 
-========
+---------------------------------
 
 # FNF Chart Reader (aka FNF GMS2 remake)
  
