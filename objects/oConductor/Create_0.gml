@@ -38,7 +38,10 @@ icon2 = 1;
 _zoom = 1;
 
 hpbarx = display_get_gui_width()/2-sprite_get_width(spr.hpbar)/2;
-hpbary = display_get_gui_height()-sprite_get_height(spr.hpbar)-32;
+if(oPlay.downscroll)
+	hpbary = sprite_get_height(spr.hpbar)+32;
+else
+	hpbary = display_get_gui_height()-sprite_get_height(spr.hpbar)-32;
 
 instance_create_layer(0,0,"Instances",oChartReader); //Reading the chart
 instance_create_layer(0,0,"Instances",oInputHandler); //Input handler for handling input <- wow really?

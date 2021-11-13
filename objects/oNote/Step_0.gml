@@ -60,6 +60,9 @@ if(onScreen)
 				case 3:
 					oChartReader._bf.animstate = "missRight";
 					break;
+				default:
+					oChartReader._bf.animstate = "missDown";
+					break;
 			}
 		}
 	}
@@ -85,24 +88,65 @@ if(onScreen)
 	
 		var _anim = "idle";
 
-		switch(noteData)
+		if(!oChartReader.sevenkeys)
 		{
-			case 0:
-				_anim = "singLeft";
-				break;
+			switch(noteData)
+			{
+				case 0:
+					_anim = "singLeft";
+					break;
 			
-			case 1:
-				_anim = "singDown";
-				break;
+				case 1:
+					_anim = "singDown";
+					break;
 			
-			case 2:
-				_anim = "singUp";
-				break;
+				case 2:
+					_anim = "singUp";
+					break;
 			
-			case 3:
-				_anim = "singRight";
-				break;
+				case 3:
+					_anim = "singRight";
+					break;
+				
+				default:
+					_anim = "singUp";
+					break;
+			}
 		}
+		else
+		{
+			switch(noteData)
+			{
+				case 0:
+					_anim = "singLeft";
+					break;
+			
+				case 1:
+					_anim = "singDown";
+					break;
+			
+				case 2:
+					_anim = "singRight";
+					break;
+			
+				case 3:
+					_anim = "singUp";
+					break;
+				
+				case 4:
+					_anim = "singLeft";
+					break;
+					
+				case 5:
+					_anim = "singUp";
+					break;
+					
+				case 6:
+					_anim = "singRight";
+					break;
+			}
+		}
+		
 		if(mustPress)
 		{
 			oChartReader._bf.danced = false;
@@ -176,20 +220,50 @@ if(oInputHandler.botplay) && (mustPress)
 {
 	if(strumTime <= oConductor.songPosition + oConductor.safeZoneOffset/2 && canBeHit)
 	{
-		switch(noteData)
+		if(!oChartReader.sevenkeys)
 		{
-			case 0:
-				keyboard_key_press(oInputHandler.left);
-				break;
-			case 1:
-				keyboard_key_press(oInputHandler.down);
-				break;
-			case 2:
-				keyboard_key_press(oInputHandler.up);
-				break;
-			case 3:
-				keyboard_key_press(oInputHandler.right);
-				break;
+			switch(noteData)
+			{
+				case 0:
+					keyboard_key_press(oInputHandler.left);
+					break;
+				case 1:
+					keyboard_key_press(oInputHandler.down);
+					break;
+				case 2:
+					keyboard_key_press(oInputHandler.up);
+					break;
+				case 3:
+					keyboard_key_press(oInputHandler.right);
+					break;
+			}
+		}
+		else
+		{
+			switch(noteData)
+			{
+				case 0:
+					keyboard_key_press(oInputHandler.s);
+					break;
+				case 1:
+					keyboard_key_press(oInputHandler.left);
+					break;
+				case 2:
+					keyboard_key_press(oInputHandler.down);
+					break;
+				case 3:
+					keyboard_key_press(vk_space);
+					break;
+				case 4:
+					keyboard_key_press(oInputHandler.up);
+					break;
+				case 5:
+					keyboard_key_press(oInputHandler.right);
+					break;
+				case 6:
+					keyboard_key_press(oInputHandler.l);
+					break;
+			}
 		}
 	}
 }

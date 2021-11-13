@@ -29,6 +29,27 @@ else
 	kadechart = true;
 }
 
+sevenkeys = false;
+notescale = 0.7;
+if(variable_struct_exists(daSong, "mania")) //oh shit more keys than 4
+{
+	switch(daSong.mania)
+	{
+		case 0:
+			notescale = 0.7;
+			sevenkeys = false;
+			break;
+		case 1:
+			notescale = 0.55;
+			sevenkeys = true;
+			break;
+		case 2:
+			notescale = 0.55;
+			sevenkeys = true;
+			break;
+	}
+}
+
 //song position should be 4x a beat, so we can countdown
 oConductor.songPosition -= oConductor.crochet*4;
 with(oConductor) event_user(0);
@@ -57,10 +78,21 @@ for(var i = 0; i < array_length(daNotes); i++)
 		
 		var _gottaHit = _mustHit;
 		
-		if(daNotes[i].sectionNotes[ii, 1] > 3)
+		if(!sevenkeys)
 		{
-			_gottaHit = !_mustHit;
-			daNotes[i].sectionNotes[ii, 1] -= 4;
+			if(daNotes[i].sectionNotes[ii, 1] > 3)
+			{
+				_gottaHit = !_mustHit;
+				daNotes[i].sectionNotes[ii, 1] -= 4;
+			}
+		}
+		else
+		{
+			if(daNotes[i].sectionNotes[ii, 1] > 6)
+			{
+				_gottaHit = !_mustHit;
+				daNotes[i].sectionNotes[ii, 1] -= 7;
+			}
 		}
 		
 		var _prevNote = undefined
@@ -76,10 +108,20 @@ for(var i = 0; i < array_length(daNotes); i++)
 		daNote.prevNote = _prevNote;
 		
 		//positioning based on must hit
-		if(_gottaHit)
-			daNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*0.7)*4;
+		if(!sevenkeys)
+		{
+			if(_gottaHit)
+				daNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*oChartReader.notescale)*4;
+			else
+				daNote.x = 16;
+		}
 		else
-			daNote.x = 16;
+		{
+			if(_gottaHit)
+				daNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*oChartReader.notescale)*7;
+			else
+				daNote.x = 16;
+		}
 		
 		with(daNote) event_user(0);
 		
@@ -108,11 +150,21 @@ for(var i = 0; i < array_length(daNotes); i++)
 				susNote.susActive = true;
 				susNote.hpMiss = 0.05;
 			
-				if(_gottaHit)
-					susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*0.7)*4;
+				if(sevenkeys)
+				{
+					if(_gottaHit)
+						susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*notescale)*7;
+					else
+						susNote.x = 16;
+				}
 				else
-					susNote.x = 16;
-			
+				{
+					if(_gottaHit)
+						susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*notescale)*4;
+					else
+						susNote.x = 16;
+				}
+				
 				with(susNote) event_user(0);
 				array_push(unspawnNotes, susNote);
 				//show_debug_message();

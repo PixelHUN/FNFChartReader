@@ -9,8 +9,8 @@ tooLate = false;
 susActive = false;
 hpMiss = 0.2;
 
-s_width = 158*0.7;
-s_height = 158*0.7;
+s_width = 158*oChartReader.notescale;
+s_height = 158*oChartReader.notescale;
 alpha = 1;
 sprite = arrow_static;
 yOffset = 0;
