@@ -261,6 +261,12 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/thunderstorm","resourceVersion":"1.0","name":"thunderstorm.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Thunderstorm_Inst.ogg","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Thunderstorm_Voices.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dissasembler","resourceVersion":"1.0","name":"dissasembler-easy.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dissasembler","resourceVersion":"1.0","name":"dissasembler-hard.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dissasembler","resourceVersion":"1.0","name":"dissasembler.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dissasembler","resourceVersion":"1.0","name":"events.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Dissasembler_Inst.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Dissasembler_Voices.ogg","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",
