@@ -13,6 +13,7 @@ else
 	_y = lerp(-1000,-(1000-720),transTimer/transSpeed);
 	if(_y >= -(1000-720))
 	{
+		if(instance_exists(oStage)) instance_destroy(oStage);
 		if(roomTo != undefined)
 			room_goto(roomTo);
 		transIn = true;
