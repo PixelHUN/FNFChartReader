@@ -24,6 +24,7 @@ for(var i = 0; i < array_length(optionslist); i++)
 	draw_text(_xx,_yy,string_lower(optionslist[i]));
 	draw_set_color(-1);
 	draw_set_font(-1);
+	draw_set_alpha(1);
 }
 
 draw_set_font(-1);
@@ -34,3 +35,6 @@ if(selection == 1)
 	draw_text(8,700,"Vsync: "+string(oPlay.vsync));
 if(selection == 2)
 	draw_text(8,700,"Downscroll: "+string(oPlay.downscroll));
+if(selection == 3)
+	draw_text(8,700,"Scroll Speed: "+string(oPlay.songspeed));
+	

@@ -132,7 +132,7 @@ else if(songPosition < 0) //oh no... we need to countdown!
 		introCounter++;
 	}
 }
-else if(songPosition >= 0 && songPosition <= crochet) //countdown finished but music is not playing... what now?
+else if(songPosition >= 0 && songPosition <= crochet && !instance_exists(oTransition)) //countdown finished but music is not playing... what now?
 {
 	inst = "assets/music/"+oChartReader.daSong.song+"_Inst.ogg"; //instrumental file location
 	inststream = audio_create_stream(inst); //read instrumental and create a playable audio stream

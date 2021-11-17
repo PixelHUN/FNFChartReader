@@ -3,6 +3,8 @@ global.menusong = 0;
 songname = "bopeebo";
 difficulty = "";
 
+songspeed = 0;
+
 _paused = false;
 
 downscroll = true;

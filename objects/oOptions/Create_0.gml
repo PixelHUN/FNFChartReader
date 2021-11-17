@@ -7,3 +7,4 @@ font = font_add_sprite_ext(_fontsprite, "abcdefghijklmnopqrstuvwxyz,_0123456789-
 optionslist[0] = "Frame Cap";
 optionslist[1] = "Vsync";
 optionslist[2] = "Downscroll";
+optionslist[3] = "Scroll Speed";

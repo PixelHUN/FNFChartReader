@@ -215,3 +215,6 @@ if(_dad.character == "gf")
 	_dad.camoffsetx = 120;
 }
 with(_dad) event_user(0);
+
+if(oPlay.songspeed != 0)
+	daSong.speed = oPlay.songspeed;
