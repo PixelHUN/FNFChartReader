@@ -82,8 +82,8 @@ if(onScreen)
 		
 		if(!mustPress && oPlay.gas)
 		{
-			if(oConductor.hp > 0.05)
-				oConductor.hp -= 0.05;
+			if(oConductor.hp > 0.025)
+				oConductor.hp -= 0.025;
 		}
 	
 		var _anim = "idle";
