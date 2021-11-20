@@ -267,6 +267,12 @@
     {"CopyToMask":-1,"filePath":"datafiles/assets/charts/dissasembler","resourceVersion":"1.0","name":"events.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Dissasembler_Inst.ogg","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Dissasembler_Voices.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/milady","resourceVersion":"1.0","name":"events.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/milady","resourceVersion":"1.0","name":"milady-easy.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/milady","resourceVersion":"1.0","name":"milady-hard.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/charts/milady","resourceVersion":"1.0","name":"milady.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Milady_Inst.ogg","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/assets/music","resourceVersion":"1.0","name":"Milady_Voices.ogg","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.6.595",

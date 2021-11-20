@@ -3,10 +3,16 @@ songname = oPlay.songname;
 difficulty = oPlay.difficulty;
 
 //read chart into string
-var _file = file_text_open_read("assets/charts/"+songname+"/"+songname+difficulty+".json");
-var _string = file_text_read_string(_file);
-//_string = string_replace(_string, " ", "");
-
+var _file = file_text_open_read("assets/charts/"+oPlay.songname+"/"+oPlay.songname+oPlay.difficulty+".json");
+var _string = "";
+while(!file_text_eof(_file))
+{
+	_string = string_insert(file_text_read_string(_file),_string,string_length(_string)+1);
+	file_text_readln(_file);
+}
+_string = string_replace_all(_string, " ", "");
+_string = string_replace_all(_string, "	", "");
+show_debug_message(_string);
 file_text_close(_file);
 
 //parse through chart json
@@ -99,75 +105,81 @@ for(var i = 0; i < array_length(daNotes); i++)
 		if(array_length(unspawnNotes) > 0)
 			_prevNote = unspawnNotes[array_length(unspawnNotes)-1];
 		
-		var daNote = instance_create_layer(0,0,"Notes",oNote);
-		daNote.strumTime = daNotes[i].sectionNotes[ii, 0];
-		daNote.noteData = daNotes[i].sectionNotes[ii, 1];
-		daNote.sustainLength = daNotes[i].sectionNotes[ii, 2];
-		//show_debug_message(daNotes[i]);
-		daNote.mustPress = _gottaHit;
-		daNote.prevNote = _prevNote;
-		
-		//positioning based on must hit
-		if(!sevenkeys)
+		if(daNotes[i].sectionNotes[ii, 1] >= 0) //weird fix
 		{
-			if(_gottaHit)
-				daNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*oChartReader.notescale)*4;
-			else
-				daNote.x = 16;
-		}
-		else
-		{
-			if(_gottaHit)
-				daNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*oChartReader.notescale)*7;
-			else
-				daNote.x = 16;
-		}
+			var daNote = instance_create_layer(0,0,"Notes",oNote);
+			daNote.strumTime = daNotes[i].sectionNotes[ii, 0];
+			daNote.noteData = daNotes[i].sectionNotes[ii, 1];
+			daNote.sustainLength = daNotes[i].sectionNotes[ii, 2];
+			//show_debug_message(daNotes[i]);
+			daNote.mustPress = _gottaHit;
+			daNote.prevNote = _prevNote;
 		
-		with(daNote) event_user(0);
-		
-		//sustain notes (i hated programming this even tho i pretty much copied it from the original source code however it didn't want to work >:O)
-		var _daStrumTime = daNote.strumTime;
-		var _susLength = daNote.sustainLength;
-		_susLength = _susLength / oConductor.stepCrochet;
-		array_push(unspawnNotes, daNote);
-		
-		if(_susLength > 0)
-		{
-			for(var iii = floor(_susLength); iii >= 0; iii--)
+			//positioning based on must hit
+			if(!sevenkeys)
 			{
-				var _prevNote = undefined
-				if(array_length(unspawnNotes) > 0)
-					_prevNote = unspawnNotes[array_length(unspawnNotes)-1];
+				if(_gottaHit)
+					daNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*oChartReader.notescale)*4;
 				else
-					_prevNote = undefined;
+					daNote.x = 16;
+			}
+			else
+			{
+				if(_gottaHit)
+					daNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*oChartReader.notescale)*7;
+				else
+					daNote.x = 16;
+			}
+		
+			with(daNote) event_user(0);
+		
+			//sustain notes (i hated programming this even tho i pretty much copied it from the original source code however it didn't want to work >:O)
+			var _daStrumTime = daNote.strumTime;
+			var _susLength = daNote.sustainLength;
+			if(is_real(_susLength)) //Psych Engine event shit fix
+			{
+				_susLength = _susLength / oConductor.stepCrochet;
+				array_push(unspawnNotes, daNote);
+		
+				if(_susLength > 0)
+				{
+					for(var iii = floor(_susLength); iii >= 0; iii--)
+					{
+						var _prevNote = undefined
+						if(array_length(unspawnNotes) > 0)
+							_prevNote = unspawnNotes[array_length(unspawnNotes)-1];
+						else
+							_prevNote = undefined;
 				
-				var susNote = instance_create_layer(0,0,"Notes",oNote);
-				susNote.strumTime = _daStrumTime + (oConductor.stepCrochet * iii) + oConductor.stepCrochet;
-				susNote.noteData = _prevNote.noteData; //daNotes[i].sectionNotes[ii, 1];
-				susNote.prevNote = _prevNote;
-				susNote.mustPress = _gottaHit;
-				susNote.isSusNote = true;
-				susNote.susActive = true;
-				susNote.hpMiss = 0.05;
+						var susNote = instance_create_layer(0,0,"Notes",oNote);
+						susNote.strumTime = _daStrumTime + (oConductor.stepCrochet * iii) + oConductor.stepCrochet;
+						susNote.noteData = _prevNote.noteData; //daNotes[i].sectionNotes[ii, 1];
+						susNote.prevNote = _prevNote;
+						susNote.mustPress = _gottaHit;
+						susNote.isSusNote = true;
+						susNote.susActive = true;
+						susNote.hpMiss = 0.05;
 			
-				if(sevenkeys)
-				{
-					if(_gottaHit)
-						susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*notescale)*7;
-					else
-						susNote.x = 16;
-				}
-				else
-				{
-					if(_gottaHit)
-						susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*notescale)*4;
-					else
-						susNote.x = 16;
-				}
+						if(sevenkeys)
+						{
+							if(_gottaHit)
+								susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*notescale)*7;
+							else
+								susNote.x = 16;
+						}
+						else
+						{
+							if(_gottaHit)
+								susNote.x = display_get_gui_width()-16-(sprite_get_width(arrow_static)*notescale)*4;
+							else
+								susNote.x = 16;
+						}
 				
-				with(susNote) event_user(0);
-				array_push(unspawnNotes, susNote);
-				//show_debug_message();
+						with(susNote) event_user(0);
+						array_push(unspawnNotes, susNote);
+						//show_debug_message();
+					}
+				}
 			}
 		}
 		//array_sort(unspawnNotes, sortbyshit);
