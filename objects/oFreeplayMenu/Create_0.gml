@@ -44,3 +44,6 @@ while _f != ""
 	}
 	show_debug_message(_f);
 }
+
+rousr_dissonance_set_state("In Menus...");
+rousr_dissonance_set_details("");

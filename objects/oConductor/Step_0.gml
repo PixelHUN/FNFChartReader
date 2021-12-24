@@ -46,36 +46,47 @@ if(audio_is_playing(musinst))
 		if(array_length(oChartReader.daNotes)-1 > curSection) && (curBeat mod 4 == 0) //zooming on every bar
 		{
 			curSection++;
-			oCamera.zoomout = oCamera.targetzoomout-0.055;
-			_zoom = 1.05;
+			var _z = 0.07;
+			var newW = cam.vw/(cam.zoom+_z);
+			var newH = cam.vh/(cam.zoom+_z);
+			camera_set_view_size(view_camera[0], newW, newH);
+			camera_set_view_pos(view_camera[0],(cam.cx+cam.ox)-newW/2,(cam.cy+cam.oy)-newH/2);
+			cam.set_zoom(1);
 		}
 		//Hardcoded MILF zooming shit
 		if(oChartReader.daSong.song = "Milf" && curBeat >= 168 && curBeat <= 200)
 		{
-			oCamera.zoomout = oCamera.targetzoomout-0.055;
-			_zoom = 1.05;
+			var _z = 0.08;
+			var newW = cam.vw/(cam.zoom+_z);
+			var newH = cam.vh/(cam.zoom+_z);
+			camera_set_view_size(view_camera[0], newW, newH);
+			camera_set_view_pos(view_camera[0],(cam.cx+cam.ox)-newW/2,(cam.cy+cam.oy)-newH/2);
+			cam.set_zoom(1);
 		}
 		
 		if(oChartReader._dad.character = "gf") //hardcoding for gf zooming shit
 		{
 			if(oChartReader.daNotes[curSection].mustHitSection) //if mustHit is true then focus on bf
 			{
-				camera_point_to(0, 1.05);
+				cam.set_target();
+				cam.target_position(oChartReader._bf._x-oChartReader._bf.camoffsetx, oChartReader._bf._y-oChartReader._bf.camoffsety);
+				cam.set_zoom(1)
 			}
 			else //focus on gf
 			{
-				camera_point_to(1, 0.8);
+				cam.set_target(oChartReader._gf);
+				cam.set_zoom(1.5);
 			}
 		}
 		else
 		{
 			if(oChartReader.daNotes[curSection].mustHitSection) //if mustHit is true then focus on bf
 			{
-				camera_point_to(0);
+				cam.target_position(oChartReader._bf._x-oChartReader._bf.camoffsetx, oChartReader._bf._y-oChartReader._bf.camoffsety);
 			}
 			else //focus on dad
 			{
-				camera_point_to(1);
+				cam.target_position(oChartReader._dad._x+oChartReader._dad.camoffsetx, oChartReader._dad._y-oChartReader._dad.camoffsety);
 			}
 		}
 		//SCROLL PAST THIS SHIT, I WAS HAVING FUN
@@ -145,6 +156,20 @@ else if(songPosition >= 0 && songPosition <= crochet && !instance_exists(oTransi
 		voicestream = audio_create_stream(voice);
 		musvoice = audio_play_sound(voicestream,999,false);
 	}
+	switch(oPlay.difficulty)
+	{
+		case "":
+			dif = "Normal";
+			break;
+		case "-easy":
+			dif = "Easy";
+			break;
+		case "-hard":
+			dif = "Hard";
+			break;
+	}
+	rousr_dissonance_set_details("Playing Song:");
+	rousr_dissonance_set_timestamps(0,audio_sound_length(musinst));
 }
 
 //song ended so transition back to freeplay
@@ -164,3 +189,5 @@ if(hp <= 0)
 //hp more than max? make it max
 if(hp > 2)
 	hp = 2;
+
+if(!instance_exists(oBFFuckingDiesLol)) rousr_dissonance_set_state(oChartReader.daSong.song+" ("+dif+") Score: "+string(songScore));

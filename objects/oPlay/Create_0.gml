@@ -14,7 +14,7 @@ depth = -999;
 
 vsync = false;
 lastvsync = vsync;
-fpscap = 120;
+fpscap = 60;
 lowframerate = false;
 
 version = "0.1 (DEV)";
@@ -22,3 +22,6 @@ version = "0.1 (DEV)";
 display_reset(0, vsync);
 
 gpu_set_tex_filter(true);
+
+rousr_dissonance_create("913142040097869845");
+rousr_dissonance_set_state("In Menus...");

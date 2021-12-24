@@ -12,11 +12,11 @@ instance_destroy(oNote);
 instance_destroy(oCharacter);
 instance_destroy(oPopUp);
 layer_destroy(oStage.layer3);
+instance_destroy(oStage);
+oConductor.cam.target_position(x+220,y+220);
 instance_destroy(oConductor);
 instance_destroy(oNoteHandler);
 instance_destroy(oChartReader);
-oCamera.targetx = x+220;
-oCamera.targety = y+220;
 
 bpm = 100;
 crochet = (60 / bpm) * 1000; // beats ms

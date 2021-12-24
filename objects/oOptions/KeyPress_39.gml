@@ -1,7 +1,7 @@
 switch(selection)
 {
 	case 0:
-		oPlay.fpscap -= 10;
+		oPlay.fpscap += 10;
 		break;
 	case 1:
 		oPlay.vsync = !oPlay.vsync;

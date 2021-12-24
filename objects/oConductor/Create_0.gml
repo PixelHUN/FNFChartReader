@@ -37,6 +37,8 @@ icon = 0;
 icon2 = 1;
 _zoom = 1;
 
+dif = "";
+
 hpbarx = display_get_gui_width()/2-sprite_get_width(spr.hpbar)/2;
 if(oPlay.downscroll)
 	hpbary = sprite_get_height(spr.hpbar)+32;
@@ -45,4 +47,6 @@ else
 
 instance_create_layer(0,0,"Instances",oChartReader); //Reading the chart
 instance_create_layer(0,0,"Instances",oInputHandler); //Input handler for handling input <- wow really?
-instance_create_layer(0,0,"Instances",oCamera); //Da Camera
+cam = dopecamera(0,0,0) //Da Camera
+cam.activate();
+cam.camera_smoothing(1 - 1 * (3 * (delta_time / 1000000)));

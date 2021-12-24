@@ -1,5 +1,5 @@
-var _camx = oCamera.camx;
-var _camy = oCamera.camy;
+var _camx = oConductor.cam.cx;
+var _camy = oConductor.cam.cy;
 layer_x(layer1, _camx * par1);
 layer_y(layer1, _camy * par1);
 
