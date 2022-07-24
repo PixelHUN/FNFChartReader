@@ -115,7 +115,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"dadasd","path":"sprites/dadasd/dadasd.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "dadasd",
     "tags": [],
     "resourceType": "GMSequence",

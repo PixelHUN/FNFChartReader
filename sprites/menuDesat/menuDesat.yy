@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"menuDesat","path":"sprites/menuDesat/menuDesat.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "menuDesat",
     "tags": [],
     "resourceType": "GMSequence",

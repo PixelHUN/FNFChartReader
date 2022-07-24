@@ -95,7 +95,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"bfdeadlol","path":"sprites/bfdeadlol/bfdeadlol.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "bfdeadlol",
     "tags": [],
     "resourceType": "GMSequence",

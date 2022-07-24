@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"arrow_static","path":"sprites/arrow_static/arrow_static.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "arrow_static",
     "tags": [],
     "resourceType": "GMSequence",
